@@ -1,0 +1,1821 @@
+/* ============================================================
+       POSTO BICHÃO — IDENTIDADE VISUAL SOLAR & DIAGONAL
+       Referências: Portal Ipiranga + Identidade "Vitamina C" Bichão
+       Cores: Azul Royal (#0038A8), Amarelo (#FFD100), Laranja (#FF6B00),
+              Branco (#FFFFFF) e Verde Funcional no WhatsApp (#22C55E)
+       ============================================================ */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    :root {
+      /* Paleta Solar Ipiranga + Posto Bichão */
+      --bichao-blue:       #0038A8;
+      --bichao-blue-dark:  #00267A;
+      --bichao-blue-deep:  #001B57;
+      --bichao-blue-soft:  #EDF3FF;
+      --bichao-blue-ice:   #F6F9FF;
+
+      --bichao-yellow:     #FFD100;
+      --bichao-yellow-hov: #FFDC33;
+      --bichao-orange:     #FF6B00;
+      --bichao-orange-lt:  #FF8524;
+
+      /* Verde Funcional Exclusivo para WhatsApp */
+      --whatsapp-green:    #20BD5A;
+      --whatsapp-dark:     #169C46;
+
+      --white:             #FFFFFF;
+      --text-main:         #002060;
+      --text-muted:        #4A5D80;
+      --border-light:      #DCE6F7;
+
+      --font-display: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --font-body:    'Inter', system-ui, -apple-system, sans-serif;
+
+      --radius-card: 28px;
+      --radius-md:   18px;
+      --radius-pill: 999px;
+
+      --shadow-soft:   0 12px 36px rgba(0, 56, 168, 0.08);
+      --shadow-strong: 0 22px 54px rgba(0, 38, 122, 0.18);
+      --shadow-yellow: 0 12px 28px rgba(255, 209, 0, 0.35);
+
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text-main);
+      background-color: var(--white);
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    a, button {
+      font-family: inherit;
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid var(--bichao-yellow);
+      outline-offset: 3px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 22px;
+    }
+
+    /* ── FAIXA TRIPLA ICÔNICA DA TESTEIRA (AMARELO + LARANJA + AZUL) ── */
+    .canopy-stripe {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .canopy-stripe__yellow { height: 7px; background: var(--bichao-yellow); }
+    .canopy-stripe__orange { height: 4px; background: var(--bichao-orange); }
+    .canopy-stripe__blue   { height: 5px; background: var(--bichao-blue); }
+
+    /* ── BOTÕES LIMPOS ESTILO PORTAL IPIRANGA ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.98rem;
+      padding: 15px 28px;
+      min-height: 54px;
+      border-radius: var(--radius-pill);
+      border: none;
+      transition: transform 220ms var(--ease), box-shadow 220ms var(--ease), background-color 220ms var(--ease);
+      white-space: nowrap;
+    }
+    .btn:hover { transform: translateY(-3px); }
+    .btn:active { transform: translateY(0) scale(0.98); }
+
+    .btn-yellow {
+      background: var(--bichao-yellow);
+      color: var(--bichao-blue-deep);
+      box-shadow: var(--shadow-yellow);
+    }
+    .btn-yellow:hover {
+      background: var(--bichao-yellow-hov);
+    }
+
+    .btn-whatsapp {
+      background: var(--whatsapp-green);
+      color: var(--white);
+      box-shadow: 0 12px 28px rgba(32, 189, 90, 0.34);
+    }
+    .btn-whatsapp:hover {
+      background: var(--whatsapp-dark);
+    }
+
+    .btn-blue {
+      background: var(--bichao-blue);
+      color: var(--white);
+      box-shadow: 0 10px 24px rgba(0, 56, 168, 0.22);
+    }
+    .btn-blue:hover {
+      background: var(--bichao-blue-dark);
+    }
+
+    .btn-outline-white {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255, 255, 255, 0.75);
+    }
+    .btn-outline-white:hover {
+      background: var(--white);
+      color: var(--bichao-blue);
+      border-color: var(--white);
+    }
+
+    .btn-waze {
+      background: #2CD6FF;
+      color: #002244;
+      font-weight: 800;
+      box-shadow: 0 10px 24px rgba(44, 214, 255, 0.32);
+    }
+    .btn-waze:hover {
+      background: #14C2EB;
+      color: #00152B;
+    }
+
+    /* ── ANIMAÇÃO DE SCROLL SUAVE ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 420ms var(--ease), transform 420ms var(--ease);
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+    }
+
+    /* ── HEADER LIMPO ESTILO PORTAL IPIRANGA ── */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 900;
+      background: var(--bichao-blue);
+      box-shadow: 0 4px 20px rgba(0, 27, 87, 0.18);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 74px;
+      gap: 20px;
+    }
+
+    .brand-logo img {
+      height: 44px;
+      width: auto;
+    }
+
+    .desktop-nav {
+      display: none;
+      align-items: center;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .desktop-nav a {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.94rem;
+      color: var(--white);
+      opacity: 0.92;
+      position: relative;
+      padding: 6px 0;
+      transition: opacity 180ms ease;
+    }
+    .desktop-nav a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 3px;
+      border-radius: 2px;
+      background: var(--bichao-yellow);
+      transition: width 220ms var(--ease);
+    }
+    .desktop-nav a:hover { opacity: 1; }
+    .desktop-nav a:hover::after { width: 100%; }
+
+    .header-cta-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .header-find-btn {
+      background: var(--bichao-yellow);
+      color: var(--bichao-blue-deep);
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.86rem;
+      padding: 10px 20px;
+      border-radius: var(--radius-pill);
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      transition: transform 180ms var(--ease), background 180ms ease;
+    }
+    .header-find-btn:hover {
+      transform: translateY(-2px);
+      background: var(--bichao-yellow-hov);
+    }
+
+    .menu-toggle-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.12);
+      border: none;
+      color: var(--white);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @media (min-width: 920px) {
+      .desktop-nav { display: flex; }
+      .menu-toggle-btn { display: none; }
+      .brand-logo img { height: 48px; }
+    }
+
+    /* Drawer Mobile Limpo */
+    .mobile-drawer-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 27, 87, 0.65);
+      backdrop-filter: blur(4px);
+      z-index: 950;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 260ms ease;
+    }
+    .mobile-drawer-backdrop.is-open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .mobile-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: min(320px, 85vw);
+      background: var(--bichao-blue);
+      z-index: 960;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transform: translateX(100%);
+      transition: transform 280ms var(--ease);
+    }
+    .mobile-drawer.is-open { transform: translateX(0); }
+
+    .mobile-drawer-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .mobile-drawer-close {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.14);
+      border: none;
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mobile-drawer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 24px 0;
+    }
+    .mobile-drawer-links a {
+      display: block;
+      padding: 14px 16px;
+      border-radius: 14px;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.08);
+    }
+    .mobile-drawer-links a:hover {
+      background: var(--bichao-yellow);
+      color: var(--bichao-blue-deep);
+    }
+
+    /* ── 01. HERO SOLAR COM TRIÂNGULOS DIAGONAIS IPIRANGA + MASCOTE ── */
+    .hero-banner {
+      position: relative;
+      color: var(--white);
+      overflow: hidden;
+    }
+
+    /* Marca d'água sutil do mascote no fundo azul (igual à imagem de referência!) */
+    .hero-watermark-mascot {
+      position: absolute;
+      right: -6%;
+      top: -4%;
+      width: 560px;
+      max-width: 85vw;
+      opacity: 0.07;
+      mix-blend-mode: screen;
+      pointer-events: none;
+      filter: grayscale(100%) contrast(150%);
+      z-index: 0;
+    }
+
+    /* Triângulos Diagonais Amarelo e Laranja inspirados no Portal Ipiranga */
+    .hero-diagonal-shapes {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .hero-shape-orange {
+      position: absolute;
+      right: -8%;
+      bottom: -18%;
+      width: 68%;
+      height: 78%;
+      background: var(--bichao-orange);
+      transform: skewY(-7deg) rotate(-4deg);
+      border-radius: 48px;
+    }
+
+    .hero-shape-yellow {
+      position: absolute;
+      right: -10%;
+      bottom: -24%;
+      width: 64%;
+      height: 74%;
+      background: var(--bichao-yellow);
+      transform: skewY(-5deg) rotate(-2deg);
+      border-radius: 48px;
+    }
+
+    @media (max-width: 859px) {
+      .hero-shape-orange {
+        width: 120%;
+        height: 44%;
+        right: -10%;
+        bottom: -8%;
+      }
+      .hero-shape-yellow {
+        width: 120%;
+        height: 40%;
+        right: -10%;
+        bottom: -11%;
+      }
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    @media (min-width: 860px) {
+      .hero-grid { grid-template-columns: 1.1fr 0.9fr; gap: 48px; }
+    }
+
+    .hero-status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      padding: 7px 16px;
+      border-radius: var(--radius-pill);
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--bichao-yellow);
+      margin-bottom: 20px;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #4ADE80;
+      box-shadow: 0 0 0 4px rgba(74, 222, 128, 0.25);
+    }
+
+    .hero-headline {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(2.35rem, 6vw, 4.1rem);
+      line-height: 1.04;
+      letter-spacing: -0.025em;
+      margin-bottom: 18px;
+    }
+
+    .hero-headline span {
+      color: var(--bichao-yellow);
+      display: block;
+    }
+
+    .hero-lead {
+      font-size: clamp(1.02rem, 2vw, 1.18rem);
+      color: rgba(255, 255, 255, 0.92);
+      max-width: 490px;
+      margin-bottom: 30px;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .hero-mascot-col {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
+
+    .hero-mascot-img {
+      width: min(330px, 78vw);
+      max-height: 430px;
+      object-fit: contain;
+      filter: drop-shadow(0 20px 36px rgba(0, 27, 87, 0.45));
+      transition: transform 320ms var(--ease);
+      cursor: pointer;
+    }
+    @media (min-width: 860px) {
+      .hero-mascot-img { width: 390px; max-height: 470px; }
+    }
+    .hero-mascot-col:hover .hero-mascot-img {
+      transform: translateY(-6px) scale(1.02);
+    }
+
+    /* Balão Limpo do Mascote */
+    .mascot-bubble {
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--white);
+      color: var(--bichao-blue-deep);
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.82rem;
+      padding: 9px 16px;
+      border-radius: var(--radius-pill);
+      box-shadow: 0 10px 24px rgba(0, 27, 87, 0.25);
+      white-space: nowrap;
+      border: 2px solid var(--bichao-yellow);
+      z-index: 3;
+      cursor: pointer;
+      transition: transform 200ms var(--ease);
+    }
+    .mascot-bubble:hover {
+      transform: translateX(-50%) scale(1.04);
+    }
+
+    /* ── 02. BARRA DE ACESSO RÁPIDO (3 CARDS SOBREPOSTOS LIMPOS) ── */
+    .quick-access-Overlap {
+      position: relative;
+      z-index: 10;
+      margin-top: -54px;
+      padding-bottom: 36px;
+    }
+
+    .quick-cards-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    @media (min-width: 820px) {
+      .quick-cards-grid {
+        grid-template-columns: 1.2fr 1fr 1fr;
+        gap: 20px;
+      }
+    }
+
+    .q-card {
+      background: var(--white);
+      border-radius: 24px;
+      padding: 24px 26px;
+      box-shadow: var(--shadow-strong);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border-light);
+      transition: transform 220ms var(--ease), box-shadow 220ms var(--ease);
+    }
+    .q-card:hover {
+      transform: translateY(-4px);
+    }
+
+    /* Faixa lateral diagonal de identidade em cada card */
+    .q-card::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 8px;
+    }
+    .q-card--zap::before { background: var(--whatsapp-green); }
+    .q-card--map::before { background: var(--bichao-yellow); }
+    .q-card--rev::before { background: var(--bichao-orange); }
+
+    .q-card-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .q-card-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .q-card--zap .q-card-icon { background: rgba(32, 189, 90, 0.14); color: var(--whatsapp-dark); }
+    .q-card--map .q-card-icon { background: rgba(0, 56, 168, 0.1); color: var(--bichao-blue); }
+    .q-card--rev .q-card-icon { background: rgba(255, 107, 0, 0.12); color: var(--bichao-orange); }
+
+    .q-card-label {
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+    }
+
+    .q-card-title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.18rem;
+      color: var(--bichao-blue-deep);
+      line-height: 1.15;
+    }
+
+    .q-card-arrow {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--bichao-blue-soft);
+      color: var(--bichao-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+    }
+    .q-card:hover .q-card-arrow {
+      background: var(--bichao-yellow);
+      color: var(--bichao-blue-deep);
+      transform: translateX(3px);
+    }
+
+    /* ── 02. ESTRUTURA & SERVIÇOS (LAYOUT EDITORIAL INSPIRADO NO PORTAL IPIRANGA - PRINT 5) ── */
+    .ipiranga-showcase-section {
+      background: var(--white);
+      padding: 96px 0;
+      position: relative;
+    }
+
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    @media (min-width: 900px) {
+      .showcase-grid {
+        grid-template-columns: 1fr 1.08fr;
+        gap: 64px;
+      }
+    }
+
+    /* Card Featured com Testeira Amarela / Laranja */
+    .showcase-card-wrapper {
+      position: relative;
+    }
+
+    .showcase-feature-card {
+      background: var(--white);
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid var(--border-light);
+      box-shadow: 0 20px 50px rgba(0, 38, 122, 0.1);
+      transition: transform 280ms var(--ease), box-shadow 280ms var(--ease);
+    }
+    .showcase-feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 60px rgba(0, 38, 122, 0.16);
+    }
+
+    .showcase-card-canopy {
+      background: linear-gradient(135deg, var(--bichao-yellow) 0%, var(--bichao-orange) 100%);
+      padding: 14px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .canopy-pill-tag {
+      background: var(--bichao-blue-deep);
+      color: var(--white);
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.76rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: var(--radius-pill);
+    }
+
+    .showcase-card-img-box {
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: var(--bichao-blue);
+    }
+
+    .showcase-card-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 420ms var(--ease), opacity 200ms ease;
+    }
+    .showcase-card-img-box img.is-changing {
+      opacity: 0.4;
+      transform: scale(0.98);
+    }
+
+    .showcase-card-content {
+      padding: 28px 28px 32px;
+    }
+
+    .showcase-card-title {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 1.55rem;
+      color: var(--bichao-blue-deep);
+      margin-bottom: 8px;
+    }
+
+    .showcase-card-desc {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+      margin-bottom: 22px;
+    }
+
+    .showcase-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.96rem;
+      color: var(--bichao-blue);
+      text-decoration: none;
+      transition: gap 200ms ease, color 200ms ease;
+    }
+    .showcase-link:hover {
+      gap: 12px;
+      color: var(--bichao-orange);
+    }
+
+    /* Coluna Direita (Tipografia Editorial + Badges) */
+    .showcase-info-col {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .eyebrow-minimal {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--bichao-orange);
+    }
+
+    .showcase-h2 {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(2.2rem, 4.8vw, 3.5rem);
+      line-height: 1.06;
+      letter-spacing: -0.025em;
+      color: var(--text-main);
+    }
+
+    .showcase-lead {
+      font-size: 1.08rem;
+      color: var(--text-muted);
+      line-height: 1.62;
+      max-width: 520px;
+      margin-bottom: 8px;
+    }
+
+    /* Badges Circulares estilo ampm / Jet Oil / KMV */
+    .showcase-badges-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .service-pill-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 18px 8px 10px;
+      border-radius: var(--radius-pill);
+      background: var(--bichao-blue-ice);
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all 200ms var(--ease);
+    }
+    .service-pill-btn:hover {
+      border-color: var(--bichao-blue);
+      background: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .service-pill-circle {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--white);
+      color: var(--bichao-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0, 38, 122, 0.08);
+      transition: all 200ms ease;
+      flex-shrink: 0;
+    }
+    .service-pill-circle svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--bichao-blue);
+      color: var(--bichao-blue);
+      display: block;
+      transition: transform 200ms ease;
+    }
+    .service-pill-btn:hover .service-pill-circle svg {
+      transform: scale(1.12);
+    }
+
+    .service-pill-label {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.94rem;
+      color: var(--bichao-blue-deep);
+    }
+
+    .service-pill-btn.is-active {
+      background: var(--white);
+      border-color: var(--bichao-yellow);
+      box-shadow: 0 8px 24px rgba(255, 209, 0, 0.35);
+      transform: translateY(-2px);
+    }
+    .service-pill-btn.is-active .service-pill-circle {
+      background: var(--bichao-yellow);
+      box-shadow: 0 4px 12px rgba(255, 209, 0, 0.45);
+    }
+    .service-pill-btn.is-active .service-pill-circle svg {
+      stroke: var(--bichao-blue-deep);
+      color: var(--bichao-blue-deep);
+    }
+
+    /* Setas Minimalistas */
+    .showcase-nav-arrows {
+      display: flex;
+      gap: 12px;
+      margin-top: 6px;
+    }
+
+    .minimal-arrow-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 2px solid var(--border-light);
+      background: var(--white);
+      color: var(--bichao-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 180ms ease;
+    }
+    .minimal-arrow-btn:hover {
+      background: var(--bichao-blue);
+      color: var(--white);
+      border-color: var(--bichao-blue);
+      transform: scale(1.06);
+    }
+
+    /* ── 03. COMPLETA A SUA JORNADA (FAIXA AMARELA SOLAR - INSPIRADO NO PRINT 4) ── */
+    .ipiranga-yellow-band {
+      background: var(--bichao-yellow);
+      padding: 92px 0;
+      position: relative;
+      overflow: hidden;
+      border-top: 5px solid var(--bichao-orange);
+    }
+
+    .yellow-band-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    @media (min-width: 900px) {
+      .yellow-band-grid {
+        grid-template-columns: 0.85fr 1.15fr;
+        gap: 64px;
+      }
+    }
+
+    .yellow-band-brand {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+    .yellow-band-logo {
+      height: 52px;
+      width: auto;
+    }
+    .yellow-band-mascot {
+      width: min(320px, 75vw);
+      max-height: 340px;
+      object-fit: contain;
+      filter: drop-shadow(0 18px 30px rgba(0, 38, 122, 0.24));
+    }
+
+    .yellow-band-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .yellow-band-h2 {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(2.3rem, 5.2vw, 3.8rem);
+      color: var(--bichao-blue-deep);
+      line-height: 1.05;
+      letter-spacing: -0.025em;
+      margin-bottom: 18px;
+    }
+
+    .yellow-band-p {
+      font-size: 1.12rem;
+      font-weight: 500;
+      color: #00267A;
+      line-height: 1.62;
+      max-width: 560px;
+      margin-bottom: 32px;
+    }
+
+    .yellow-band-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 36px;
+      margin-bottom: 32px;
+    }
+
+    .y-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .y-stat-num {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 2.3rem;
+      color: var(--bichao-blue-deep);
+      line-height: 1;
+    }
+
+    .y-stat-lbl {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #1E3A8A;
+      margin-top: 4px;
+    }
+
+    .yellow-band-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 1.05rem;
+      color: var(--bichao-blue-deep);
+      text-decoration: none;
+      transition: gap 200ms ease;
+    }
+    .yellow-band-link:hover {
+      gap: 15px;
+      color: #001B57;
+    }
+
+    /* ── 04. PLANEJE SEU PIT STOP (CARD AZUL ROYAL IPIRANGA - INSPIRADO NO PRINT 3) ── */
+    .ipiranga-blue-card-section {
+      background: #F4F6F9;
+      padding: 84px 0;
+      position: relative;
+    }
+
+    .blue-portal-card {
+      background: var(--bichao-blue);
+      border-radius: 32px;
+      padding: 48px 36px;
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0, 38, 122, 0.22);
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    @media (min-width: 768px) {
+      .blue-portal-card { padding: 56px 52px; }
+    }
+
+    /* Listras diagonais em ciano inspiradas no print 3 */
+    .blue-card-stripes {
+      position: absolute;
+      right: -40px;
+      bottom: -30px;
+      width: 320px;
+      height: 180px;
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.35) 0%, rgba(56, 189, 248, 0.08) 100%);
+      transform: skewX(-25deg);
+      pointer-events: none;
+      border-radius: 20px;
+    }
+
+    .blue-card-head {
+      margin-bottom: 28px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .blue-card-h2 {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(1.85rem, 4vw, 2.7rem);
+      color: var(--bichao-yellow);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+
+    .blue-card-sub {
+      font-size: 1.02rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* Seletor Minimalista (Pills) */
+    .clean-vehicle-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 28px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .clean-v-pill {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: var(--white);
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.92rem;
+      padding: 10px 22px;
+      border-radius: var(--radius-pill);
+      cursor: pointer;
+      transition: all 180ms ease;
+    }
+    .clean-v-pill:hover {
+      background: rgba(255, 255, 255, 0.22);
+      transform: translateY(-2px);
+    }
+    .clean-v-pill.is-active {
+      background: var(--white);
+      color: var(--bichao-blue-deep);
+      border-color: var(--white);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+      transform: translateY(-2px);
+    }
+
+    /* Faixa de Resumo Horizontal */
+    .clean-sim-summary {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      padding: 24px 28px;
+      background: rgba(0, 27, 87, 0.55);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      margin-bottom: 30px;
+      position: relative;
+      z-index: 2;
+    }
+    @media (min-width: 768px) {
+      .clean-sim-summary {
+        grid-template-columns: 1.2fr 1.2fr 0.8fr;
+        gap: 28px;
+      }
+    }
+
+    .sim-spec-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .sim-spec-label {
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(255, 255, 255, 0.65);
+      font-weight: 800;
+    }
+
+    .sim-spec-value {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: var(--white);
+      line-height: 1.35;
+    }
+    .color-gold {
+      color: var(--bichao-yellow) !important;
+    }
+
+    .blue-card-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .blue-card-zap-link {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.95rem;
+      color: var(--white);
+      text-decoration: none;
+      margin-left: 8px;
+      transition: color 180ms ease;
+    }
+    .blue-card-zap-link:hover {
+      color: var(--bichao-yellow);
+    }
+
+    /* ── 06. ENCONTROS NO BICHÃO & FEED (LIMPO E ESPAÇADO) ── */
+    .gallery-clean-section {
+      padding: 76px 0;
+      background: var(--bichao-blue-ice);
+    }
+
+    .gallery-showcase-box {
+      background: var(--white);
+      border-radius: var(--radius-card);
+      padding: 20px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--border-light);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      align-items: center;
+    }
+
+    @media (min-width: 860px) {
+      .gallery-showcase-box {
+        grid-template-columns: 1.4fr 0.6fr;
+        padding: 28px;
+      }
+    }
+
+    .gal-main-stage {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      aspect-ratio: 16 / 10;
+      background: var(--bichao-blue-deep);
+    }
+
+    .gal-main-stage img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 200ms ease;
+    }
+    .gal-main-stage img.is-switching { opacity: 0.4; }
+
+    .gal-stage-caption {
+      position: absolute;
+      inset: auto 0 0 0;
+      background: linear-gradient(to top, rgba(0, 27, 87, 0.9) 0%, transparent 100%);
+      padding: 24px 20px 18px;
+      color: var(--white);
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+
+    .gal-arrow-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--white);
+      border: none;
+      color: var(--bichao-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+      transition: background 180ms ease, transform 180ms ease;
+    }
+    .gal-arrow-btn:hover {
+      background: var(--bichao-yellow);
+      transform: translateY(-50%) scale(1.08);
+    }
+    .gal-arrow-prev { left: 14px; }
+    .gal-arrow-next { right: 14px; }
+
+    .gal-thumbs-col {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .gal-thumbs-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    @media (min-width: 860px) {
+      .gal-thumbs-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .gal-thumb-item {
+      aspect-ratio: 4 / 3;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 3px solid transparent;
+      opacity: 0.6;
+      padding: 0;
+      background: var(--bichao-blue);
+      transition: opacity 180ms ease, border-color 180ms ease, transform 180ms ease;
+    }
+    .gal-thumb-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .gal-thumb-item.is-active {
+      opacity: 1;
+      border-color: var(--bichao-orange);
+      transform: scale(1.03);
+    }
+
+    /* ── 07. ENCONTRE O POSTO BICHÃO (ESTILO MAPA ANIMADO DO PORTAL IPIRANGA) ── */
+    .find-station-section {
+      padding: 76px 0;
+      background: var(--white);
+    }
+
+    .find-station-card {
+      background: var(--bichao-blue);
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: var(--shadow-strong);
+      display: grid;
+      grid-template-columns: 1fr;
+      color: var(--white);
+      position: relative;
+    }
+
+    @media (min-width: 860px) {
+      .find-station-card {
+        grid-template-columns: 1fr 1.05fr;
+      }
+    }
+
+    .find-station-info {
+      padding: 36px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    @media (min-width: 860px) {
+      .find-station-info { padding: 48px 44px; }
+    }
+
+    .find-station-title {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(1.85rem, 3.8vw, 2.5rem);
+      line-height: 1.08;
+    }
+    .find-station-title span { color: var(--bichao-yellow); }
+
+    .find-address-box {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .copy-pill-btn {
+      background: var(--bichao-yellow);
+      color: var(--bichao-blue-deep);
+      border: none;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.78rem;
+      padding: 8px 14px;
+      border-radius: var(--radius-pill);
+      flex-shrink: 0;
+    }
+
+    .find-hours-contacts-box {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 18px;
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .f-info-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .f-info-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--bichao-yellow);
+      font-weight: 800;
+    }
+    .f-info-line {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.92rem;
+      color: var(--white);
+    }
+    .f-detail-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.18);
+      padding: 3px 10px;
+      border-radius: var(--radius-pill);
+      font-size: 0.74rem;
+      font-weight: 800;
+      color: var(--bichao-yellow);
+      white-space: nowrap;
+    }
+    .f-info-contacts-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+    .f-detail-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--white);
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 180ms ease;
+    }
+    .f-detail-link:hover {
+      color: var(--bichao-yellow);
+    }
+
+    /* Mapa de Ruas Claro e Animado Estilo Ipiranga */
+    .ipiranga-map-canvas {
+      position: relative;
+      min-height: 320px;
+      background: #EBF2FF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .ipiranga-map-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .animated-dashed-route {
+      stroke-dasharray: 12 10;
+      animation: dashMove 1.2s linear infinite;
+    }
+    @keyframes dashMove {
+      to { stroke-dashoffset: -22; }
+    }
+
+    .map-station-pin {
+      position: relative;
+      z-index: 2;
+      background: var(--white);
+      color: var(--bichao-blue-deep);
+      padding: 12px 20px;
+      border-radius: 22px;
+      box-shadow: 0 16px 36px rgba(0, 38, 122, 0.25);
+      border: 3px solid var(--bichao-yellow);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: transform 220ms var(--ease);
+    }
+    .map-station-pin:hover {
+      transform: translateY(-4px) scale(1.04);
+    }
+
+    .map-pin-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: var(--bichao-blue);
+      color: var(--bichao-yellow);
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ── 08. AVALIAÇÃO GOOGLE & REDES SOCIAIS ── */
+    .reviews-clean-section {
+      padding: 0 0 76px;
+      background: var(--white);
+    }
+
+    .review-banner-card {
+      background: var(--bichao-blue-ice);
+      border: 2px solid var(--border-light);
+      border-radius: 32px;
+      padding: 32px 24px 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      align-items: flex-end;
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(0, 38, 122, 0.06);
+    }
+    @media (min-width: 820px) {
+      .review-banner-card {
+        grid-template-columns: 0.85fr 1.15fr;
+        padding: 40px 48px 0;
+        gap: 40px;
+      }
+    }
+
+    .review-mascot-col {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      height: 100%;
+      margin-bottom: 0;
+    }
+
+    .review-mascot-img {
+      width: min(320px, 80vw);
+      max-height: 380px;
+      height: auto;
+      display: block;
+      margin-bottom: 0;
+      vertical-align: bottom;
+      transition: transform 250ms ease;
+    }
+    .review-mascot-col:hover .review-mascot-img {
+      transform: translateY(-4px) scale(1.02);
+    }
+
+    .review-content-col {
+      padding-bottom: 32px;
+    }
+    @media (min-width: 820px) {
+      .review-content-col {
+        padding-bottom: 44px;
+      }
+    }
+
+    .review-stars-interactive {
+      display: inline-flex;
+      gap: 6px;
+      background: var(--white);
+      padding: 8px 18px;
+      border-radius: var(--radius-pill);
+      box-shadow: var(--shadow-soft);
+      margin-bottom: 12px;
+    }
+
+    .star-btn {
+      background: none;
+      border: none;
+      font-size: 1.7rem;
+      color: #FFB800;
+      line-height: 1;
+      transition: transform 180ms var(--ease);
+    }
+    .star-btn:hover, .star-btn.is-popped {
+      transform: scale(1.2);
+      color: var(--bichao-orange);
+    }
+    .star-btn.is-dimmed { color: #CBD5E1; }
+
+    .reviews-mini-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    @media (min-width: 768px) {
+      .reviews-mini-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .rev-quote-card {
+      background: var(--white);
+      border: 1px solid var(--border-light);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    /* Feed Compacto com o Post Vitamina C */
+    .social-strip-section {
+      padding: 0 0 76px;
+      background: var(--white);
+    }
+
+    .social-feed-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      align-items: center;
+    }
+    @media (min-width: 860px) {
+      .social-feed-row {
+        grid-template-columns: 1fr 1.2fr;
+      }
+    }
+
+    .social-posts-trio {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .social-post-thumb {
+      aspect-ratio: 4 / 5;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      border: 2px solid var(--border-light);
+      transition: transform 220ms var(--ease);
+    }
+    .social-post-thumb:hover {
+      transform: translateY(-4px);
+      border-color: var(--bichao-yellow);
+    }
+    .social-post-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Rodapé institucional */
+    .site-footer { background:#102f6b; color:#b7c8e4; padding:48px 0 22px; font-size:.86rem; line-height:1.65; }
+    .footer-grid { display:grid; grid-template-columns:1.4fr .9fr .9fr 1fr; gap:48px; padding-bottom:48px; }
+    .footer-brand img { width:120px; height:auto; display:block; margin-bottom:18px; }
+    .footer-brand p { max-width:225px; }
+    .footer-heading { color:var(--bichao-yellow); font-family:var(--font-display); font-size:.68rem; font-weight:800; text-transform:uppercase; letter-spacing:.12em; margin:0 0 20px; }
+    .footer-links { list-style:none; display:grid; gap:10px; }
+    .footer-icon-row { display:flex; gap:10px; align-items:flex-start; }
+    .footer-icon-row svg { color:var(--bichao-yellow); width:16px; height:16px; flex-shrink:0; margin-top:3px; }
+    .footer-hours { margin-top:14px; }
+    .footer-route { display:inline-flex; align-items:center; min-height:44px; margin-top:16px; padding:8px 21px; border-radius:999px; background:var(--bichao-yellow); color:#102f6b; font-size:.75rem; font-weight:800; }
+    .footer-bottom { display:flex; align-items:center; justify-content:space-between; gap:20px; border-top:1px solid rgba(255,255,255,.12); padding-top:24px; font-size:.75rem; }
+    .footer-socials { display:flex; gap:10px; }
+    .footer-socials a { width:44px; height:44px; display:grid; place-items:center; background:rgba(255,255,255,.08); color:white; border-radius:50%; }
+    .footer-socials svg { width:18px; height:18px; }
+    .site-footer a { transition:color .2s, background .2s; }
+    .site-footer a:hover { color:var(--bichao-yellow); }
+    .site-footer .footer-route:hover { background:#ffe46b; color:#102f6b; }
+    .site-footer a:focus-visible { outline:2px solid var(--bichao-yellow); outline-offset:5px; }
+    @media(max-width:1000px) { .footer-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:36px; } }
+    @media(max-width:540px) {
+      .site-footer { padding:36px 0 110px; }
+      .footer-grid { grid-template-columns:1fr; gap:30px; padding-bottom:32px; }
+      .footer-brand p { max-width:290px; }
+      .footer-heading { margin-bottom:14px; }
+      .footer-links a { display:inline-flex; min-height:36px; align-items:center; }
+      .footer-bottom { align-items:flex-start; flex-direction:column; }
+    }
+
+    /* Toast Feedback */
+    .ui-toast {
+      position: fixed;
+      top: 90px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-16px);
+      background: var(--bichao-blue-deep);
+      color: var(--white);
+      border: 2px solid var(--bichao-yellow);
+      padding: 10px 20px;
+      border-radius: var(--radius-pill);
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.85rem;
+      z-index: 1100;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 200ms ease, transform 200ms ease;
+    }
+    .ui-toast.is-shown {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+/* Google Maps fills the existing location panel at every viewport width. */
+.station-google-map { position:absolute; inset:0; width:100%; height:100%; border:0; display:block; }
+
+
+.google-reviews-widget { margin-top:32px; width:100%; min-width:0; }
+
+/* Hero com foto de fundo total sem faixa branca, centralização vertical perfeita e layout mobile impecável */
+.hero-banner {
+  position: relative;
+  min-height: calc(100vh - 66px);
+  display: flex;
+  align-items: center;
+  padding: 0;
+  background: #031b49;
+  overflow: hidden;
+  isolation: isolate;
+  margin: 0;
+}
+.hero-station-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right bottom;
+  display: block;
+}
+.hero-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(3,20,57,.97) 0%, rgba(3,24,65,.90) 32%, rgba(3,24,65,.45) 58%, rgba(3,24,65,0) 86%);
+  pointer-events: none;
+  z-index: 1;
+}
+.hero-banner > .container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+.hero-grid {
+  width: 100%;
+  display: block;
+}
+.hero-grid > div {
+  max-width: 580px;
+  transform: none;
+}
+
+@media (max-width: 900px) {
+  .hero-banner {
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    background: #031b49;
+    flex-direction: row;
+  }
+  .hero-banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background:
+      linear-gradient(
+        90deg,
+        rgba(3,20,57,.97) 0%,
+        rgba(3,22,60,.88) 25%,
+        rgba(3,24,65,.65) 45%,
+        rgba(3,24,65,.35) 62%,
+        rgba(3,24,65,.12) 78%,
+        rgba(3,24,65,0) 100%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(2,15,45,.55) 0%,
+        rgba(2,15,45,0) 30%,
+        rgba(2,15,45,0) 70%,
+        rgba(2,15,45,.65) 100%
+      );
+    display: block;
+  }
+  .hero-station-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 72% center;
+    display: block;
+    opacity: 1;
+    margin-top: 0;
+    box-shadow: none;
+  }
+  .hero-banner > .container {
+    order: unset;
+    position: relative;
+    z-index: 2;
+    padding: 80px 22px 48px;
+    width: 100%;
+  }
+  .hero-grid {
+    width: 100%;
+    display: block;
+  }
+  .hero-grid > div {
+    max-width: 54%;
+    transform: none;
+  }
+  .hero-status-pill {
+    font-size: 0.7rem;
+    padding: 6px 14px;
+    margin-bottom: 16px;
+  }
+  .hero-headline {
+    font-size: clamp(1.8rem, 6.5vw, 2.5rem);
+    line-height: 1.06;
+    margin-bottom: 14px;
+  }
+  .hero-lead {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    max-width: 100%;
+    margin-bottom: 22px;
+    color: rgba(255,255,255,0.92);
+  }
+  .hero-cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    width: 100%;
+  }
+  .hero-cta-row .btn {
+    min-height: 48px;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-banner {
+    min-height: 100svh;
+    align-items: center;
+  }
+  .hero-banner > .container {
+    padding: 72px 18px 44px;
+  }
+  .hero-station-photo {
+    object-position: 72% center;
+  }
+  .hero-grid > div {
+    max-width: 62%;
+  }
+  .hero-headline {
+    font-size: clamp(1.65rem, 7.5vw, 2.2rem);
+    margin-bottom: 12px;
+  }
+  .hero-lead {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin-bottom: 18px;
+  }
+  .hero-cta-row {
+    flex-direction: column;
+    gap: 10px;
+    max-width: 260px;
+  }
+  .hero-cta-row .btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.85rem;
+    padding: 12px 16px;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-banner > .container {
+    padding: 68px 14px 38px;
+  }
+  .hero-grid > div {
+    max-width: 68%;
+  }
+  .hero-headline {
+    font-size: 1.5rem;
+  }
+  .hero-lead {
+    font-size: 0.82rem;
+  }
+}

@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Posto Bichão • Lá a Parada é Completa | Cambé – PR (24h)</title>
+  <meta name="description" content="Se é pra parar, para no Bichão. Combustível Ipimax, conveniência 24h, café fresquinho e atendimento completo em Cambé – PR." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Posto Bichão – Se é pra parar, para no Bichão." />
+  <meta property="og:description" content="No Posto Bichão você encontra combustível Ipimax, conveniência 24h e atendimento com qualidade garantida em Cambé – PR." />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "GasStation",
+    "name": "Posto Bichão",
+    "description": "Abastecimento Ipimax, conveniência completa, café e lanches 24 horas em Cambé - PR.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Cambé",
+      "addressRegion": "PR",
+      "addressCountry": "BR"
+    },
+    "openingHours": "Mo-Su 00:00-23:59",
+    "priceRange": "$$"
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,500;0,600;0,700;0,800;0,900;1,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <div id="uiToast" class="ui-toast" role="status" aria-live="polite">Localização copiada!</div>
+
+  <!-- ====== HEADER ESTILO PORTAL IPIRANGA + FAIXA DA TESTEIRA ====== -->
+  <header class="site-header" id="topo" role="banner">
+    <div class="container">
+      <div class="header-inner">
+        <a href="#hero" class="brand-logo" aria-label="Posto Bichão - Início">
+          <img src="public/images/logo-dark-bg.png" alt="Logo Posto Bichão" width="148" height="54" />
+        </a>
+
+        <nav aria-label="Navegação principal">
+          <ul class="desktop-nav">
+            <li><a href="#estrutura">Serviços</a></li>
+            <li><a href="#sobre">O Bichão</a></li>
+            <li><a href="#simulador">Pit Stop</a></li>
+            <li><a href="#encontros">Encontros</a></li>
+            <li><a href="#localizacao">Localização</a></li>
+            <li><a href="#avaliacao">Avaliações</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-cta-group">
+          <a href="#localizacao" class="header-find-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            <span>Encontrar Posto</span>
+          </a>
+
+          <button type="button" class="menu-toggle-btn" id="openDrawerBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileDrawer">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Faixa Tripla da Testeira Posto Bichão / Ipiranga -->
+    <div class="canopy-stripe" aria-hidden="true">
+      <div class="canopy-stripe__yellow"></div>
+      <div class="canopy-stripe__orange"></div>
+    </div>
+  </header>
+
+  <!-- ====== MENU MOBILE ====== -->
+  <div class="mobile-drawer-backdrop" id="drawerBackdrop" aria-hidden="true"></div>
+  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Menu móvel">
+    <div>
+      <div class="mobile-drawer-head">
+        <img src="public/images/logo-dark-bg.png" alt="Posto Bichão" width="120" height="44" style="height:36px;width:auto;" />
+        <button type="button" class="mobile-drawer-close" id="closeDrawerBtn" aria-label="Fechar menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <ul class="mobile-drawer-links">
+        <li><a href="#estrutura" class="js-drawer-link">Serviços &amp; Estrutura</a></li>
+        <li><a href="#sobre" class="js-drawer-link">O Bichão (24 Horas)</a></li>
+        <li><a href="#simulador" class="js-drawer-link">Pit Stop &amp; Rota</a></li>
+        <li><a href="#encontros" class="js-drawer-link">Encontros no Bichão</a></li>
+        <li><a href="#localizacao" class="js-drawer-link">Localização (Cambé – PR)</a></li>
+        <li><a href="#avaliacao" class="js-drawer-link">Avaliações (4,9★)</a></li>
+      </ul>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <a href="https://api.whatsapp.com/send/?phone=5543988288537&text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Posto%20Bich%C3%A3o." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="width:100%;">
+        Chamar no WhatsApp
+      </a>
+      <a href="https://maps.google.com/dir/?api=1&destination=Posto+Bichao+Cambe" target="_blank" rel="noopener noreferrer" class="btn btn-yellow" style="width:100%;">
+        Traçar Rota no Maps
+      </a>
+      <a href="https://waze.com/ul?q=Posto+Bichao+Cambe" target="_blank" rel="noopener noreferrer" class="btn btn-blue" style="width:100%;">
+        Abrir no Waze
+      </a>
+    </div>
+  </aside>
+
+  <main>
+    <!-- ====== 01. HERO SOLAR COM GEOMETRIA DIAGONAL IPIRANGA + MASCOTE ====== -->
+    <section id="hero" class="hero-banner" aria-label="Destaque Posto Bichão">
+      <img class="hero-station-photo" src="public/images/hero-posto.webp" alt="Vista completa da fachada do Posto Bichão, com pista de abastecimento e conveniência" width="1916" height="821" fetchpriority="high" />
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <!-- Status Inteligente em Tempo Real -->
+            <div class="hero-status-pill" id="liveStatusBadge">
+              <span class="status-dot" aria-hidden="true"></span>
+              <span id="liveStatusText">Aberto Agora &bull; Cambé – PR</span>
+            </div>
+
+            <h1 class="hero-headline">
+              SE É PRA PARAR,
+              <span>PARA NO BICHÃO.</span>
+            </h1>
+
+            <p class="hero-lead">
+              Combustível Ipimax de alto rendimento, conveniência completa e pátio seguro. A parada mais completa da sua rota em Cambé.
+            </p>
+
+            <div class="hero-cta-row">
+              <a href="https://api.whatsapp.com/send/?phone=5543988288537&text=Ol%C3%A1%21%20Estou%20no%20site%20do%20Posto%20Bich%C3%A3o%20e%20quero%20atendimento."
+                 target="_blank" rel="noopener noreferrer"
+                 class="btn btn-whatsapp">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                <span>Chamar no WhatsApp</span>
+              </a>
+
+              <a href="https://maps.google.com/dir/?api=1&destination=Posto+Bichao+Cambe"
+                 target="_blank" rel="noopener noreferrer"
+                 class="btn btn-yellow">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+                <span>Google Maps</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== 02. ESTRUTURA & SERVIÇOS (LAYOUT EDITORIAL INSPIRADO NO PORTAL IPIRANGA - PRINT 5) ====== -->
+    <section id="estrutura" class="ipiranga-showcase-section" aria-labelledby="showcase-heading">
+      <div class="container">
+        <div class="showcase-grid">
+          
+          <!-- Lado Esquerdo: Card Featured com testeira Ipiranga Amarela/Laranja -->
+          <div class="showcase-card-wrapper reveal">
+            <article class="showcase-feature-card" id="showcaseActiveCard">
+              <div class="showcase-card-canopy">
+                <span class="canopy-pill-tag" id="showcaseTag">Ipimax • Alta Performance</span>
+              </div>
+              <div class="showcase-card-img-box">
+                <img id="showcaseImg" src="public/images/abastecimento.webp" alt="Combustível Ipimax no Posto Bichão" loading="lazy" />
+              </div>
+              <div class="showcase-card-content">
+                <h3 class="showcase-card-title" id="showcaseTitle">Combustível Ipimax</h3>
+                <p class="showcase-card-desc" id="showcaseDesc">
+                  Gasolina, Diesel S10 e Etanol aditivados com tecnologia de ponta. Limpa bicos, reduz emissões e rende mais quilômetros por litro.
+                </p>
+                <a href="https://api.whatsapp.com/send/?phone=5543988288537&text=Ol%C3%A1%21%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20o%20abastecimento%20no%20Posto%20Bich%C3%A3o." target="_blank" rel="noopener noreferrer" class="showcase-link" id="showcaseLink">
+                  <span>Consultar no WhatsApp</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Lado Direito: Tipografia Editorial Limpa + Badges Circulares (Idêntico ao print 5 da Ipiranga) -->
+          <div class="showcase-info-col reveal">
+            <span class="eyebrow-minimal">Estrutura &amp; Serviços</span>
+            <h2 id="showcase-heading" class="showcase-h2">
+              O que você precisar,<br/>o Bichão completa.
+            </h2>
+            <p class="showcase-lead">
+              A Ipiranga evoluiu para completar muito mais que seu tanque. No Posto Bichão, reunimos combustíveis aditivados, conveniência 24h, café fresquinho e a melhor parada de Cambé.
+            </p>
+
+            <!-- Badges Circulares inspiradas em ampm / Jet Oil / KMV -->
+            <div class="showcase-badges-row" role="tablist" aria-label="Selecione um serviço">
+              <button type="button" class="service-pill-btn is-active" role="tab" aria-selected="true" data-service="ipimax" aria-label="Combustível Ipimax">
+                <span class="service-pill-circle">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 22h12M4 9h10M4 4h10a2 2 0 0 1 2 2v16H4V4z"/><path d="M16 9h2a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h0a2 2 0 0 0 2-2V9l-3-3"/><circle cx="9" cy="14" r="1"/></svg>
+                </span>
+                <span class="service-pill-label">Ipimax</span>
+              </button>
+              <button type="button" class="service-pill-btn" role="tab" aria-selected="false" data-service="conveniencia" aria-label="Conveniência 24 Horas">
+                <span class="service-pill-circle">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg>
+                </span>
+                <span class="service-pill-label">Conveniência</span>
+              </button>
+              <button type="button" class="service-pill-btn" role="tab" aria-selected="false" data-service="patio" aria-label="Pátio &amp; Descanso Seguro">
+                <span class="service-pill-circle">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                </span>
+                <span class="service-pill-label">Pátio Seguro</span>
+              </button>
+              <button type="button" class="service-pill-btn" role="tab" aria-selected="false" data-service="pista" aria-label="Ar Digital &amp; Serviços de Pista">
+                <span class="service-pill-circle">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="8"/><line x1="12" y1="16" x2="12" y2="22"/><line x1="2" y1="12" x2="8" y2="12"/><line x1="16" y1="12" x2="22" y2="12"/></svg>
+                </span>
+                <span class="service-pill-label">Ar &amp; Pista</span>
+              </button>
+            </div>
+
+            <!-- Setas de navegação minimalistas (estilo Ipiranga oficial) -->
+            <div class="showcase-nav-arrows">
+              <button type="button" class="minimal-arrow-btn" id="showcasePrevBtn" aria-label="Serviço anterior">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+              </button>
+              <button type="button" class="minimal-arrow-btn" id="showcaseNextBtn" aria-label="Próximo serviço">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== 03. COMPLETA A SUA JORNADA (FAIXA AMARELA SOLAR - INSPIRADO NO PRINT 4) ====== -->
+    <section id="sobre" class="ipiranga-yellow-band" aria-label="Sobre a parada no Posto Bichão">
+      <div class="container">
+        <div class="yellow-band-grid">
+          
+          <!-- Lado Esquerdo: Mascote em harmonia -->
+          <div class="yellow-band-brand reveal">
+            <img src="public/images/mascot-seated.webp" alt="Mascote Posto Bichão" width="380" height="380" class="yellow-band-mascot" loading="lazy" />
+          </div>
+
+          <!-- Lado Direito: Tipografia Limpa e Números Reais -->
+          <div class="yellow-band-text reveal">
+            <h2 class="yellow-band-h2">Completa a sua jornada.</h2>
+            <p class="yellow-band-p">
+              A Ipiranga evoluiu para você seguir abastecendo a sua vida em movimento. No Posto Bichão, sua parada é 100% acolhedora, com qualidade certificada, banheiros higienizados e conveniência 24h em Cambé – PR.
+            </p>
+
+            <div class="yellow-band-stats">
+              <div class="y-stat">
+                <strong class="y-stat-num">24h</strong>
+                <span class="y-stat-lbl">Seg a Sáb (Dom até 20h)</span>
+              </div>
+              <div class="y-stat">
+                <strong class="y-stat-num">4,9★</strong>
+                <span class="y-stat-lbl">73 Avaliações no Google</span>
+              </div>
+              <div class="y-stat">
+                <strong class="y-stat-num">100%</strong>
+                <span class="y-stat-lbl">Combustível Ipimax</span>
+              </div>
+            </div>
+
+            <a href="https://maps.google.com/dir/?api=1&destination=Posto+Bichao+Cambe" target="_blank" rel="noopener noreferrer" class="yellow-band-link">
+              <span>Como chegar ao posto</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== 04. PLANEJE SEU PIT STOP (CARD AZUL ROYAL IPIRANGA - INSPIRADO NO PRINT 3) ====== -->
+    <section id="simulador" class="ipiranga-blue-card-section" aria-labelledby="sim-title">
+      <div class="container">
+        <div class="blue-portal-card reveal">
+          <!-- Grafismo diagonal em ciano no canto inferior direito igual ao print da Ipiranga -->
+          <div class="blue-card-stripes" aria-hidden="true"></div>
+
+          <div class="blue-card-head">
+            <h2 id="sim-title" class="blue-card-h2">Vai passar por Cambé? Planeje seu pit stop.</h2>
+            <p class="blue-card-sub">
+              Selecione o seu veículo e trace sua rota para o Posto Bichão em 1 toque:
+            </p>
+          </div>
+
+          <!-- Seletor Minimalista (Pills limpos, sem emojis infantis) -->
+          <div class="clean-vehicle-tabs" role="tablist" aria-label="Tipo de veículo">
+            <button type="button" class="clean-v-pill is-active" role="tab" aria-selected="true" data-v="carro">
+              <span>Carro de Passeio</span>
+            </button>
+            <button type="button" class="clean-v-pill" role="tab" aria-selected="false" data-v="suv">
+              <span>SUV &amp; Família</span>
+            </button>
+            <button type="button" class="clean-v-pill" role="tab" aria-selected="false" data-v="moto">
+              <span>Motocicleta</span>
+            </button>
+            <button type="button" class="clean-v-pill" role="tab" aria-selected="false" data-v="caminhao">
+              <span>Caminhão &amp; Frota</span>
+            </button>
+          </div>
+
+          <!-- Faixa Horizontal de Resumo Limpo -->
+          <div class="clean-sim-summary">
+            <div class="sim-spec-item">
+              <span class="sim-spec-label">Combustível Sugerido</span>
+              <strong class="sim-spec-value" id="cleanFuelVal">Gasolina Ipimax ou Etanol Ipimax</strong>
+            </div>
+            <div class="sim-spec-item">
+              <span class="sim-spec-label">Conveniência</span>
+              <strong class="sim-spec-value" id="cleanSnackVal">Café Expresso + Pão de Queijo Quentinho</strong>
+            </div>
+            <div class="sim-spec-item">
+              <span class="sim-spec-label">Tempo Médio de Parada</span>
+              <strong class="sim-spec-value color-gold" id="cleanTimeVal">5 a 10 Minutos</strong>
+            </div>
+          </div>
+
+          <!-- Ações de Navegação e Contato -->
+          <div class="blue-card-actions">
+            <a href="https://maps.google.com/dir/?api=1&destination=Posto+Bichao+Cambe" target="_blank" rel="noopener noreferrer" class="btn btn-yellow">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+              <span>Abrir no Google Maps</span>
+            </a>
+            <a href="https://waze.com/ul?q=Posto+Bichao+Cambe" target="_blank" rel="noopener noreferrer" class="btn btn-outline-white">
+              <span>Abrir no Waze</span>
+            </a>
+            <a href="https://api.whatsapp.com/send/?phone=5543988288537&text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20estou%20chegando%20ao%20Posto%20Bich%C3%A3o." target="_blank" rel="noopener noreferrer" class="blue-card-zap-link">
+              <span>Avisar no WhatsApp →</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== 06. ENCONTROS NO BICHÃO (GALERIA LIMPA) ====== -->
+    <section id="encontros" class="gallery-clean-section" aria-labelledby="encontros-heading">
+      <div class="container">
+        <div class="clean-section-head reveal">
+          <div>
+            <span class="eyebrow-yellow">Galeria de Fotos</span>
+            <h2 id="encontros-heading" class="clean-h2">
+              Encontros <span>no Bichão.</span>
+            </h2>
+          </div>
+          <p style="color:var(--text-muted);max-width:380px;font-size:0.96rem;">
+            Registros reais de quem passa por aqui e faz do nosso pátio o ponto de encontro preferido.
+          </p>
+        </div>
+
+        <div class="gallery-showcase-box reveal">
+          <div class="gal-main-stage" id="galleryStage">
+            <img id="galleryMainImg" src="public/images/posto-pista-caminhao.jpg" alt="Pista Ipiranga do Posto Bichão" loading="lazy" />
+            <button type="button" class="gal-arrow-btn gal-arrow-prev" id="galleryPrevBtn" aria-label="Foto anterior">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <button type="button" class="gal-arrow-btn gal-arrow-next" id="galleryNextBtn" aria-label="Próxima foto">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+            <div class="gal-stage-caption">
+              <div>
+                <div id="galleryCaptionTitle" style="font-family:var(--font-display);font-weight:800;font-size:1.1rem;">Pista Ipiranga 24 Horas</div>
+                <div id="galleryCaptionSub" style="font-size:0.84rem;opacity:0.86;">Abastecimento ágil e atendimento parceiro em Cambé</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="gal-thumbs-col">
+            <div class="gal-thumbs-grid" role="tablist" aria-label="Escolher foto da galeria">
+              <button type="button" class="gal-thumb-item is-active" role="tab" aria-selected="true"
+                      data-idx="0"
+                      data-src="public/images/posto-pista-caminhao.jpg"
+                      data-title="Pista Ipiranga 24 Horas"
+                      data-sub="Abastecimento ágil e atendimento parceiro em Cambé"
+                      aria-label="Foto 1">
+                <img src="public/images/posto-pista-caminhao.jpg" alt="Miniatura 1 - Pista" loading="lazy" />
+              </button>
+              <button type="button" class="gal-thumb-item" role="tab" aria-selected="false"
+                      data-idx="1"
+                      data-src="public/images/posto-conveniencia-entrada.jpg"
+                      data-title="Conveniência Posto Bichão"
+                      data-sub="Café fresquinho, lanches e parada clássica de quem viaja"
+                      aria-label="Foto 2">
+                <img src="public/images/posto-conveniencia-entrada.jpg" alt="Miniatura 2 - Conveniência" loading="lazy" />
+              </button>
+              <button type="button" class="gal-thumb-item" role="tab" aria-selected="false"
+                      data-idx="2"
+                      data-src="public/images/posto-jet-oil.jpg"
+                      data-title="Box Jet Oil Ipiranga"
+                      data-sub="Troca de óleo especializada e segurança Texaco"
+                      aria-label="Foto 3">
+                <img src="public/images/posto-jet-oil.jpg" alt="Miniatura 3 - Jet Oil" loading="lazy" />
+              </button>
+              <button type="button" class="gal-thumb-item" role="tab" aria-selected="false"
+                      data-idx="3"
+                      data-src="public/images/gallery-01.webp"
+                      data-title="Encontros no Bichão"
+                      data-sub="O ponto de encontro preferido na rodovia e na cidade"
+                      aria-label="Foto 4">
+                <img src="public/images/gallery-01.webp" alt="Miniatura 4 - Encontros" loading="lazy" />
+              </button>
+            </div>
+
+            <a href="https://instagram.com/postobichao" target="_blank" rel="noopener noreferrer" class="btn btn-blue" style="width:100%;">
+              <span>Ver mais no @postobichao</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== 07. LOCALIZAÇÃO (ESTILO "ENCONTRE O POSTO" DO PORTAL IPIRANGA) ====== -->
+    <section id="localizacao" class="find-station-section" aria-labelledby="loc-heading">
+      <div class="container">
+        <div class="find-station-card reveal">
+          <div class="find-station-info">
+            <div>
+              <span class="eyebrow-yellow">Como Chegar &bull; Cambé – PR</span>
+              <h2 id="loc-heading" class="find-station-title">
+                Fácil de chegar.<br/><span>Difícil é não parar.</span>
+              </h2>
+              <p style="color:rgba(255,255,255,0.9);margin-top:10px;font-size:0.98rem;">
+                Venha abastecer seu veículo com Ipimax, calibrar os pneus e saborear um café quentinho em Cambé – PR.
+              </p>
+            </div>
+
+            <!-- Box com Endereço Oficial Completo -->
+            <div class="find-address-box">
+              <div>
+                <div style="font-size:0.74rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--bichao-yellow);font-weight:800;margin-bottom:2px;">Endereço Oficial</div>
+                <div style="font-family:var(--font-display);font-weight:800;font-size:1.05rem;line-height:1.35;">
+                  R. Roberto Romanelli, 843
+                  <div style="font-size:0.88rem;font-weight:500;opacity:0.92;margin-top:3px;">
+                    Jardim Riviera &bull; Cambé – PR<br/>
+                    <span style="white-space:nowrap;font-weight:700;color:var(--white);">CEP: 86187-015</span>
+                  </div>
+                </div>
+              </div>
+              <button type="button" class="copy-pill-btn" id="copyAddressBtn" title="Copiar endereço completo com CEP">Copiar</button>
+            </div>
+
+            <!-- Horários & Contato Direto Organizados -->
+            <div class="find-hours-contacts-box">
+              <div class="f-info-group">
+                <div class="f-info-label">Horários de Atendimento</div>
+                <div class="f-info-line">
+                  <span class="f-detail-badge">Seg a Sáb</span>
+                  <span><strong>24 Horas</strong> (Ininterrupto)</span>
+                </div>
+                <div class="f-info-line">
+                  <span class="f-detail-badge">Domingo</span>
+                  <span><strong>07:00 às 20:00</strong></span>
+                </div>
+              </div>
+
+              <div class="f-info-group" style="padding-top:10px;border-top:1px solid rgba(255,255,255,0.12);">
+                <div class="f-info-label">Telefones &amp; Contato</div>
+                <div class="f-info-contacts-row">
+                  <a href="tel:43984311420" class="f-detail-link" style="white-space:nowrap;">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    <span>(43) 98431-1420</span>
+                  </a>
+                  <a href="https://api.whatsapp.com/send/?phone=5543988288537&text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Posto%20Bich%C3%A3o." target="_blank" rel="noopener noreferrer" class="f-detail-link" style="white-space:nowrap;">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                    <span>(43) 98828-8537 (Whats)</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;">
+              <a href="https://maps.google.com/dir/?api=1&destination=Posto+Bichao+Cambe"
+                 target="_blank" rel="noopener noreferrer"
+                 class="btn btn-yellow" style="flex:1;min-width:140px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+                <span>Google Maps</span>
+              </a>
+              <a href="https://waze.com/ul?q=Posto+Bichao+Cambe"
+                 target="_blank" rel="noopener noreferrer"
+                 class="btn btn-waze" style="flex:1;min-width:140px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4v8z"/></svg>
+                <span>Abrir no Waze</span>
+              </a>
+              <a href="tel:43984311420"
+                 class="btn btn-outline-white" style="flex:1;min-width:120px;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <span>Ligar Agora</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Google Maps oficial do Posto Bichão -->
+          <div class="ipiranga-map-canvas">
+            <iframe class="station-google-map"
+              title="Localização do Posto Bichão no Google Maps"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3664.6312362356757!2d-51.23422480000001!3d-23.292845399999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94eb5b3b4026b96d%3A0x61bd697de8055618!2sPosto%20Bich%C3%A3o!5e0!3m2!1spt-PT!2sbr!4v1792123558949!5m2!1spt-PT!2sbr"
+              width="600" height="450" style="border:0;"
+              allowfullscreen loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== 08. AVALIAÇÃO GOOGLE CONVIDATIVA ====== -->
+    <section id="avaliacao" class="reviews-clean-section" aria-labelledby="aval-heading">
+      <div class="container">
+        <div class="review-banner-card reveal">
+          <div class="review-mascot-col">
+            <img src="public/images/mascot-heart.webp"
+                 alt="Mascote Bichão fazendo coração"
+                 id="reviewMascotImg"
+                 class="review-mascot-img"
+                 loading="lazy" />
+          </div>
+
+          <div class="review-content-col">
+            <div class="review-stars-interactive" role="group" aria-label="Avaliar de 1 a 5 estrelas">
+              <button type="button" class="star-btn is-popped" data-star="1" aria-label="1 estrela">&#9733;</button>
+              <button type="button" class="star-btn is-popped" data-star="2" aria-label="2 estrelas">&#9733;</button>
+              <button type="button" class="star-btn is-popped" data-star="3" aria-label="3 estrelas">&#9733;</button>
+              <button type="button" class="star-btn is-popped" data-star="4" aria-label="4 estrelas">&#9733;</button>
+              <button type="button" class="star-btn is-popped" data-star="5" aria-label="5 estrelas">&#9733;</button>
+            </div>
+
+            <div id="starFeedbackMsg" style="font-family:var(--font-display);font-weight:800;font-size:0.92rem;color:var(--bichao-orange);margin-bottom:6px;">
+              Nota 4,9 no Google &bull; 73 avaliações reais
+            </div>
+
+            <h2 id="aval-heading" class="clean-h2" style="margin-bottom:10px;">
+              Gostou da experiência? <span>Conte para a gente.</span>
+            </h2>
+
+            <p style="color:var(--text-muted);margin-bottom:22px;max-width:480px;">
+              Sua avaliação 5 estrelas fortalece nossa equipe que está pronta para te atender dia e noite em Cambé – PR.
+            </p>
+
+            <a href="https://maps.google.com/?q=Posto+Bichao+Cambe"
+               target="_blank" rel="noopener noreferrer"
+               class="btn btn-blue">
+              <span>Deixar Avaliação no Google</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Avaliações reais do Google via Elfsight -->
+        <div class="google-reviews-widget" aria-label="Avaliações de clientes no Google">
+          <script src="https://elfsightcdn.com/platform.js" async></script>
+          <div class="elfsight-app-881e30fd-c71d-47eb-bbb9-f963fb4457ab" data-elfsight-app-lazy></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== 09. REDES SOCIAIS & FEED OFICIAL ====== -->
+    <section id="redes" class="social-strip-section" aria-labelledby="redes-heading">
+      <div class="container">
+        <div class="social-feed-row reveal">
+          <div>
+            <span class="eyebrow-yellow">Redes Sociais</span>
+            <h2 id="redes-heading" class="clean-h2" style="margin-bottom:12px;">
+              O Bichão também tá <span>no seu feed.</span>
+            </h2>
+            <p style="color:var(--text-muted);margin-bottom:24px;">
+              Siga o Posto Bichão no Instagram e Facebook para acompanhar novidades da conveniência e da pista.
+            </p>
+            <div style="display:flex;flex-wrap:wrap;gap:12px;">
+              <a href="https://instagram.com/postobichao" target="_blank" rel="noopener noreferrer" class="btn btn-blue">
+                <span>Instagram @postobichao</span>
+              </a>
+              <a href="https://facebook.com/postobichao" target="_blank" rel="noopener noreferrer" class="btn btn-yellow">
+                <span>Facebook</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="social-posts-trio">
+<a href="https://www.instagram.com/p/Def_MD3xiu3/" target="_blank" rel="noopener noreferrer" class="social-post-thumb" aria-label="Outubro Rosa — abrir no Instagram"><img src="public/images/instagram-outubro-rosa.webp" alt="Outubro Rosa" width="864" height="1080" loading="lazy" /></a>
+<a href="https://www.instagram.com/p/DeXJrx1kUsH/?img_index=1" target="_blank" rel="noopener noreferrer" class="social-post-thumb" aria-label="Visita especial no Posto Bichão — abrir no Instagram"><img src="public/images/instagram-visita.webp" alt="Visita especial no Posto Bichão" width="864" height="1080" loading="lazy" /></a>
+<a href="https://www.instagram.com/p/DeCpcC8KmN-/" target="_blank" rel="noopener noreferrer" class="social-post-thumb" aria-label="Tanque cheio com a confiança do Posto Bichão — abrir no Instagram"><img src="public/images/instagram-confianca.webp" alt="Tanque cheio com a confiança do Posto Bichão" width="864" height="1080" loading="lazy" /></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ====== FOOTER ====== -->
+  <div class="canopy-stripe" aria-hidden="true">
+    <div class="canopy-stripe__yellow"></div>
+    <div class="canopy-stripe__orange"></div>
+  </div>
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#hero" aria-label="Posto Bichão — início"><img src="public/images/logo-white.png" alt="Posto Bichão" width="120" height="44" loading="lazy" /></a>
+          <p>Se é pra parar, para no Bichão.<br />Combustível Ipimax, conveniência 24h e atendimento parceiro em Cambé – PR.</p>
+        </div>
+        <nav aria-labelledby="footer-nav-heading">
+          <h2 id="footer-nav-heading" class="footer-heading">Navegação</h2>
+          <ul class="footer-links">
+            <li><a href="#sobre">O Bichão</a></li>
+            <li><a href="#experiencia">Pit Stop 360°</a></li>
+            <li><a href="#simulador">Simulador de Rota</a></li>
+            <li><a href="#encontros">Galeria</a></li>
+            <li><a href="#localizacao">Localização</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2 class="footer-heading">Contato &amp; WhatsApp</h2>
+          <ul class="footer-links">
+            <li><a class="footer-icon-row" href="https://api.whatsapp.com/send/?phone=5543988288537&text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Posto%20Bich%C3%A3o." target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><span>(43) 98828-8537</span></a></li>
+            <li><a class="footer-icon-row" href="tel:43984311420"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>(43) 98431-1420</span></a></li>
+            <li><a class="footer-icon-row" href="https://instagram.com/postobichao" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg><span>@postobichao</span></a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer-heading">Onde estamos</h2>
+          <a class="footer-icon-row" href="#localizacao"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20 10c0 6-8 11-8 11S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span>R. Roberto Romanelli, 843<br />Cambé — PR, 86187-015</span></a>
+          <p class="footer-icon-row footer-hours"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Seg a Sáb: 24 Horas<br />Domingo: 07:00 às 20:00</span></p>
+          <div style="display:flex;gap:8px;margin-top:10px;">
+            <a class="footer-route" href="https://maps.google.com/dir/?api=1&amp;destination=Posto+Bichao+Cambe" target="_blank" rel="noopener noreferrer">Maps</a>
+            <a class="footer-route" href="https://waze.com/ul?q=Posto+Bichao+Cambe" target="_blank" rel="noopener noreferrer">Waze</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Posto Bichão. Todos os direitos reservados.</p>
+        <div class="footer-socials">
+          <a href="https://instagram.com/postobichao" target="_blank" rel="noopener noreferrer" aria-label="Instagram do Posto Bichão"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#localizacao" aria-label="Localização do Posto Bichão"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20 10c0 6-8 11-8 11S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
