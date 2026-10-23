@@ -148,6 +148,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var showcaseTitle = document.getElementById('showcaseTitle');
   var showcaseDesc = document.getElementById('showcaseDesc');
   var showcaseLink = document.getElementById('showcaseLink');
+  var showcaseCardContent = document.querySelector('.showcase-card-content');
   var servicePills = document.querySelectorAll('.service-pill-btn');
   var showcasePrevBtn = document.getElementById('showcasePrevBtn');
   var showcaseNextBtn = document.getElementById('showcaseNextBtn');
@@ -157,28 +158,41 @@ document.addEventListener('DOMContentLoaded', function () {
     currentServiceIdx = (index + servicesData.length) % servicesData.length;
     var data = servicesData[currentServiceIdx];
 
-    if (showcaseImg) {
-      showcaseImg.classList.add('is-changing');
-      setTimeout(function () {
+    if (showcaseImg) showcaseImg.classList.add('is-changing');
+    if (showcaseCardContent) showcaseCardContent.classList.add('is-changing');
+
+    setTimeout(function () {
+      if (showcaseImg) {
         showcaseImg.src = data.img;
         showcaseImg.alt = data.title;
-        if (showcaseTag) showcaseTag.textContent = data.tag;
-        if (showcaseTitle) showcaseTitle.textContent = data.title;
-        if (showcaseDesc) showcaseDesc.textContent = data.desc;
-        if (showcaseLink) {
-          showcaseLink.href = data.linkHref;
-          var linkSpan = showcaseLink.querySelector('span');
-          if (linkSpan) linkSpan.textContent = data.linkText;
-        }
         showcaseImg.classList.remove('is-changing');
-      }, 140);
-    }
+      }
+      if (showcaseTag) showcaseTag.textContent = data.tag;
+      if (showcaseTitle) showcaseTitle.textContent = data.title;
+      if (showcaseDesc) showcaseDesc.textContent = data.desc;
+      if (showcaseLink) {
+        showcaseLink.href = data.linkHref;
+        var linkSpan = showcaseLink.querySelector('span');
+        if (linkSpan) linkSpan.textContent = data.linkText;
+      }
+      if (showcaseCardContent) showcaseCardContent.classList.remove('is-changing');
+    }, 140);
 
     servicePills.forEach(function (pill, i) {
       var isAct = (i === currentServiceIdx);
       pill.classList.toggle('is-active', isAct);
       pill.setAttribute('aria-selected', isAct ? 'true' : 'false');
     });
+
+    if (window.innerWidth < 900) {
+      var activeCard = document.getElementById('showcaseActiveCard');
+      if (activeCard) {
+        var rect = activeCard.getBoundingClientRect();
+        if (rect.top > window.innerHeight * 0.72) {
+          activeCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      }
+    }
   }
 
   servicePills.forEach(function (pill, i) {
