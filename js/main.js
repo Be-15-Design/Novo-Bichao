@@ -11,8 +11,8 @@ window.siteContent = {
     reviewsCount: "73 comentários no Google",
     hoursWeekday: "Aberto 24 horas",
     hoursSunday: "07:00 às 20:00",
-    googleMapsUrl: "https://maps.google.com/?q=Posto+Bichao+Cambe",
-    googleRouteUrl: "https://maps.google.com/dir/?api=1&destination=Posto+Bichao+Cambe",
+    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Posto+Bich%C3%A3o+Camb%C3%A9+-+PR",
+    googleRouteUrl: "https://www.google.com/maps/dir/?api=1&destination=Posto+Bich%C3%A3o,+Camb%C3%A9+-+PR",
     wazeUrl: "https://waze.com/ul?q=Posto+Bichao+Cambe",
     instagramUrl: "https://instagram.com/postobichao"
   }
@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function () {
       desc: "Pátio 100% asfaltado e iluminado com lâmpadas LED de alta potência, câmeras de segurança monitoradas 24 horas e sanitários com higienização contínua.",
       img: "public/images/posto-exterior.webp",
       linkText: "Traçar Rota até o Pátio",
-      linkHref: "https://maps.google.com/dir/?api=1&destination=Posto+Bichao+Cambe"
+      linkHref: "https://www.google.com/maps/dir/?api=1&destination=Posto+Bich%C3%A3o,+Camb%C3%A9+-+PR"
     },
     {
       key: "pista",
@@ -148,7 +148,6 @@ document.addEventListener('DOMContentLoaded', function () {
   var showcaseTitle = document.getElementById('showcaseTitle');
   var showcaseDesc = document.getElementById('showcaseDesc');
   var showcaseLink = document.getElementById('showcaseLink');
-  var showcaseCardContent = document.querySelector('.showcase-card-content');
   var servicePills = document.querySelectorAll('.service-pill-btn');
   var showcasePrevBtn = document.getElementById('showcasePrevBtn');
   var showcaseNextBtn = document.getElementById('showcaseNextBtn');
@@ -158,41 +157,28 @@ document.addEventListener('DOMContentLoaded', function () {
     currentServiceIdx = (index + servicesData.length) % servicesData.length;
     var data = servicesData[currentServiceIdx];
 
-    if (showcaseImg) showcaseImg.classList.add('is-changing');
-    if (showcaseCardContent) showcaseCardContent.classList.add('is-changing');
-
-    setTimeout(function () {
-      if (showcaseImg) {
+    if (showcaseImg) {
+      showcaseImg.classList.add('is-changing');
+      setTimeout(function () {
         showcaseImg.src = data.img;
         showcaseImg.alt = data.title;
+        if (showcaseTag) showcaseTag.textContent = data.tag;
+        if (showcaseTitle) showcaseTitle.textContent = data.title;
+        if (showcaseDesc) showcaseDesc.textContent = data.desc;
+        if (showcaseLink) {
+          showcaseLink.href = data.linkHref;
+          var linkSpan = showcaseLink.querySelector('span');
+          if (linkSpan) linkSpan.textContent = data.linkText;
+        }
         showcaseImg.classList.remove('is-changing');
-      }
-      if (showcaseTag) showcaseTag.textContent = data.tag;
-      if (showcaseTitle) showcaseTitle.textContent = data.title;
-      if (showcaseDesc) showcaseDesc.textContent = data.desc;
-      if (showcaseLink) {
-        showcaseLink.href = data.linkHref;
-        var linkSpan = showcaseLink.querySelector('span');
-        if (linkSpan) linkSpan.textContent = data.linkText;
-      }
-      if (showcaseCardContent) showcaseCardContent.classList.remove('is-changing');
-    }, 140);
+      }, 140);
+    }
 
     servicePills.forEach(function (pill, i) {
       var isAct = (i === currentServiceIdx);
       pill.classList.toggle('is-active', isAct);
       pill.setAttribute('aria-selected', isAct ? 'true' : 'false');
     });
-
-    if (window.innerWidth < 900) {
-      var activeCard = document.getElementById('showcaseActiveCard');
-      if (activeCard) {
-        var rect = activeCard.getBoundingClientRect();
-        if (rect.top > window.innerHeight * 0.72) {
-          activeCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
-      }
-    }
   }
 
   servicePills.forEach(function (pill, i) {
@@ -248,50 +234,134 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // ── 6. GALERIA ENCONTROS NO BICHÃO ───────────────────────────
-  var mainImg = document.getElementById('galleryMainImg');
-  var capTitle = document.getElementById('galleryCaptionTitle');
-  var capSub = document.getElementById('galleryCaptionSub');
-  var idxNow = document.getElementById('galleryIdxNow');
-  var thumbs = document.querySelectorAll('.gal-thumb-item');
-  var prevBtn = document.getElementById('galleryPrevBtn');
-  var nextBtn = document.getElementById('galleryNextBtn');
-  var stage = document.getElementById('galleryStage');
-  var curIdx = 0;
+    // ── 6. CARROSSEL CINEMATOGRÁFICO ENCONTROS NO BICHÃO (20 FOTOS) ──
+  (function initCinematicCarousel() {
+    var mainImg = document.getElementById('carouselMainImg');
+    var stage = document.getElementById('carouselStage');
+    var thumbs = Array.from(document.querySelectorAll('.bichao-carousel-thumb'));
+    var prevBtn = document.getElementById('carouselPrevBtn');
+    var nextBtn = document.getElementById('carouselNextBtn');
 
-  function setSlide(i) {
-    if (!thumbs.length || !mainImg) return;
-    curIdx = (i + thumbs.length) % thumbs.length;
-    var btn = thumbs[curIdx];
-    mainImg.classList.add('is-switching');
-    setTimeout(function () {
-      mainImg.src = btn.getAttribute('data-src');
-      if (capTitle) capTitle.textContent = btn.getAttribute('data-title');
-      if (capSub) capSub.textContent = btn.getAttribute('data-sub');
-      if (idxNow) idxNow.textContent = String(curIdx + 1).padStart(2, '0');
-      mainImg.classList.remove('is-switching');
-    }, 140);
-    thumbs.forEach(function (t, idx) {
-      var act = (idx === curIdx);
-      t.classList.toggle('is-active', act);
-      t.setAttribute('aria-selected', act ? 'true' : 'false');
+    // Lightbox modal elements
+    var lightbox = document.getElementById('carouselLightbox');
+    var lbImg = document.getElementById('carouselLightboxImg');
+    var lbClose = document.getElementById('carouselLightboxClose');
+    var lbBackdrop = document.getElementById('carouselLightboxBackdrop');
+    var lbPrev = document.getElementById('carouselLightboxPrev');
+    var lbNext = document.getElementById('carouselLightboxNext');
+
+    if (!mainImg || !thumbs.length) return;
+
+    var curIdx = 0;
+    var total = thumbs.length;
+
+    function setSlide(index, shouldScrollThumb) {
+      curIdx = (index + total) % total;
+      var btn = thumbs[curIdx];
+      if (!btn) return;
+
+      mainImg.classList.add('is-switching');
+      setTimeout(function () {
+        mainImg.src = btn.getAttribute('data-src');
+        mainImg.classList.remove('is-switching');
+      }, 100);
+
+      thumbs.forEach(function (t, i) {
+        var act = (i === curIdx);
+        t.classList.toggle('is-active', act);
+        t.setAttribute('aria-selected', act ? 'true' : 'false');
+      });
+
+      if (shouldScrollThumb !== false && btn) {
+        try {
+          btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        } catch (e) {}
+      }
+
+      if (lightbox && lightbox.classList.contains('is-open') && lbImg) {
+        lbImg.src = btn.getAttribute('data-src');
+      }
+    }
+
+    function openLightbox() {
+      if (!lightbox) return;
+      var btn = thumbs[curIdx];
+      if (btn && lbImg) lbImg.src = btn.getAttribute('data-src');
+      lightbox.removeAttribute('hidden');
+      requestAnimationFrame(function () {
+        lightbox.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      });
+    }
+
+    function closeLightbox() {
+      if (!lightbox) return;
+      lightbox.classList.remove('is-open');
+      document.body.style.overflow = '';
+      setTimeout(function () {
+        lightbox.setAttribute('hidden', '');
+      }, 250);
+    }
+
+    // Clique nas miniaturas
+    thumbs.forEach(function (t) {
+      t.addEventListener('click', function () {
+        var idx = parseInt(t.getAttribute('data-idx'), 10) || 0;
+        setSlide(idx, true);
+      });
     });
-  }
-  thumbs.forEach(function (t) {
-    t.addEventListener('click', function () {
-      setSlide(parseInt(t.getAttribute('data-idx'), 10) || 0);
+
+    // Controles < e >
+    if (prevBtn) prevBtn.addEventListener('click', function () { setSlide(curIdx - 1, true); });
+    if (nextBtn) nextBtn.addEventListener('click', function () { setSlide(curIdx + 1, true); });
+
+    // Clique na imagem principal abre lightbox
+    if (stage) {
+      stage.addEventListener('click', function (e) {
+        openLightbox();
+      });
+
+      // Swipe touch na imagem principal
+      var startX = 0;
+      stage.addEventListener('touchstart', function (e) {
+        startX = e.touches[0].clientX;
+      }, { passive: true });
+      stage.addEventListener('touchend', function (e) {
+        var diffX = startX - e.changedTouches[0].clientX;
+        if (Math.abs(diffX) > 40) {
+          setSlide(diffX > 0 ? curIdx + 1 : curIdx - 1, true);
+        }
+      }, { passive: true });
+    }
+
+    // Lightbox eventos
+    if (lbClose) lbClose.addEventListener('click', closeLightbox);
+    if (lbBackdrop) lbBackdrop.addEventListener('click', closeLightbox);
+    if (lbPrev) lbPrev.addEventListener('click', function () { setSlide(curIdx - 1, true); });
+    if (lbNext) lbNext.addEventListener('click', function () { setSlide(curIdx + 1, true); });
+
+    window.addEventListener('keydown', function (e) {
+      if (lightbox && lightbox.classList.contains('is-open')) {
+        if (e.key === 'Escape') closeLightbox();
+        else if (e.key === 'ArrowRight') setSlide(curIdx + 1, true);
+        else if (e.key === 'ArrowLeft') setSlide(curIdx - 1, true);
+      }
     });
-  });
-  if (prevBtn) prevBtn.addEventListener('click', function () { setSlide(curIdx - 1); });
-  if (nextBtn) nextBtn.addEventListener('click', function () { setSlide(curIdx + 1); });
-  if (stage) {
-    var sx = 0;
-    stage.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; }, { passive: true });
-    stage.addEventListener('touchend', function (e) {
-      var dx = sx - e.changedTouches[0].clientX;
-      if (Math.abs(dx) > 40) setSlide(dx > 0 ? curIdx + 1 : curIdx - 1);
-    }, { passive: true });
-  }
+
+    // Lightbox touch swipe
+    if (lightbox) {
+      var lbStartX = 0;
+      lightbox.addEventListener('touchstart', function (e) {
+        lbStartX = e.touches[0].clientX;
+      }, { passive: true });
+      lightbox.addEventListener('touchend', function (e) {
+        var diffX = lbStartX - e.changedTouches[0].clientX;
+        if (Math.abs(diffX) > 45) {
+          setSlide(diffX > 0 ? curIdx + 1 : curIdx - 1, true);
+        }
+      }, { passive: true });
+    }
+  })();
 
   // ── 7. ESTRELAS INTERATIVAS ──────────────────────────────────
   var starBtns = document.querySelectorAll('.star-btn');

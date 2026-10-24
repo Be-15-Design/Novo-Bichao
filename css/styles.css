@@ -241,14 +241,13 @@
       font-family: var(--font-display);
       font-weight: 800;
       font-size: 0.86rem;
-      padding: 10px 20px;
+      padding: 10px 18px;
       border-radius: var(--radius-pill);
       display: inline-flex;
       align-items: center;
       gap: 7px;
       white-space: nowrap;
       flex-shrink: 0;
-      text-decoration: none;
       transition: transform 180ms var(--ease), background 180ms ease;
     }
     .header-find-btn:hover {
@@ -642,12 +641,12 @@
     .showcase-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 36px;
+      gap: 48px;
       align-items: center;
     }
     @media (min-width: 900px) {
       .showcase-grid {
-        grid-template-columns: 1.08fr 1fr;
+        grid-template-columns: 1fr 1.08fr;
         gap: 64px;
       }
     }
@@ -709,10 +708,6 @@
 
     .showcase-card-content {
       padding: 28px 28px 32px;
-      transition: opacity 140ms ease;
-    }
-    .showcase-card-content.is-changing {
-      opacity: 0.35;
     }
 
     .showcase-card-title {
@@ -1145,120 +1140,297 @@
       color: var(--bichao-yellow);
     }
 
-    /* ── 06. ENCONTROS NO BICHÃO & FEED (LIMPO E ESPAÇADO) ── */
-    .gallery-clean-section {
-      padding: 76px 0;
-      background: var(--bichao-blue-ice);
-    }
-
-    .gallery-showcase-box {
-      background: var(--white);
-      border-radius: var(--radius-card);
-      padding: 20px;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid var(--border-light);
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
-      align-items: center;
-    }
-
-    @media (min-width: 860px) {
-      .gallery-showcase-box {
-        grid-template-columns: 1.4fr 0.6fr;
-        padding: 28px;
-      }
-    }
-
-    .gal-main-stage {
+            /* ── 06. ENCONTROS NO BICHÃO (CARROSSEL CINEMATOGRÁFICO 20 FOTOS) ── */
+    .bichao-carousel-section {
+      padding: 84px 0;
+      background: var(--bichao-blue);
+      color: var(--white);
       position: relative;
-      border-radius: 20px;
-      overflow: hidden;
-      aspect-ratio: 16 / 10;
-      background: var(--bichao-blue-deep);
     }
 
-    .gal-main-stage img {
+    .bichao-carousel-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 36px;
+    }
+
+    .bichao-carousel-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.8vw, 2.7rem);
+      font-weight: 800;
+      color: var(--white);
+      margin: 10px 0 12px;
+      line-height: 1.18;
+      letter-spacing: -0.02em;
+    }
+    .bichao-carousel-title span {
+      color: var(--bichao-yellow);
+    }
+
+    .bichao-carousel-subtitle {
+      color: #edf3ff;
+      font-size: 1.02rem;
+      line-height: 1.55;
+      opacity: 0.95;
+    }
+
+    .bichao-carousel-container {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    /* Palco da Imagem Principal (Foco 100% na Foto, Sem Frases) */
+    .bichao-carousel-stage {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      border-radius: 28px;
+      overflow: hidden;
+      background: #001b57;
+      box-shadow: 0 25px 60px -12px rgba(0, 20, 60, 0.6);
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .bichao-carousel-stage img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: opacity 200ms ease;
+      display: block;
+      transition: opacity 220ms ease, transform 380ms cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .gal-main-stage img.is-switching { opacity: 0.4; }
+    .bichao-carousel-stage:hover img {
+      transform: scale(1.02);
+    }
+    .bichao-carousel-stage img.is-switching {
+      opacity: 0.3;
+      transform: scale(0.99);
+    }
 
-    .gal-stage-caption {
-      position: absolute;
-      inset: auto 0 0 0;
-      background: linear-gradient(to top, rgba(0, 27, 87, 0.9) 0%, transparent 100%);
-      padding: 24px 20px 18px;
-      color: var(--white);
+    /* Trilho de Miniaturas (Linha Horizontal) */
+    .bichao-carousel-thumbs-wrapper {
+      margin-top: 20px;
+      width: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      scroll-behavior: smooth;
+      padding: 6px 2px;
+    }
+    .bichao-carousel-thumbs-wrapper::-webkit-scrollbar {
+      display: none;
+    }
+
+    .bichao-carousel-thumbs-track {
       display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
+      gap: 14px;
+      align-items: center;
     }
 
-    .gal-arrow-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
+    .bichao-carousel-thumb {
+      flex: 0 0 calc((100% - (4 * 14px)) / 5);
+      aspect-ratio: 16 / 10;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 3.5px solid transparent;
+      opacity: 0.45;
+      filter: grayscale(20%);
+      padding: 0;
+      background: #001b57;
+      cursor: pointer;
+      transition: opacity 200ms ease, filter 200ms ease, border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+    }
+    .bichao-carousel-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      pointer-events: none;
+    }
+    .bichao-carousel-thumb:hover {
+      opacity: 0.9;
+      filter: grayscale(0%);
+      transform: translateY(-2px);
+    }
+    .bichao-carousel-thumb.is-active {
+      opacity: 1;
+      filter: none;
+      border-color: #00a8ff;
+      box-shadow: 0 6px 20px rgba(0, 168, 255, 0.5);
+      transform: scale(1.02);
+    }
+
+    @media (max-width: 860px) {
+      .bichao-carousel-thumb {
+        flex: 0 0 140px;
+      }
+      .bichao-carousel-stage {
+        border-radius: 20px;
+        aspect-ratio: 4 / 3;
+      }
+    }
+
+    /* Controles de Navegação Centrados (< e >) */
+    .bichao-carousel-nav {
+      margin-top: 22px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .bichao-nav-btn {
       width: 44px;
       height: 44px;
-      border-radius: 50%;
-      background: var(--white);
-      border: none;
-      color: var(--bichao-blue);
+      border-radius: 8px;
+      border: 1.5px solid rgba(255, 255, 255, 0.45);
+      background: transparent;
+      color: var(--white);
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
-      transition: background 180ms ease, transform 180ms ease;
+      cursor: pointer;
+      transition: border-color 180ms ease, background 180ms ease, color 180ms ease, transform 180ms ease;
     }
-    .gal-arrow-btn:hover {
+    .bichao-nav-btn:hover {
+      border-color: var(--bichao-yellow);
+      color: var(--bichao-blue-deep);
       background: var(--bichao-yellow);
-      transform: translateY(-50%) scale(1.08);
+      transform: scale(1.08);
     }
-    .gal-arrow-prev { left: 14px; }
-    .gal-arrow-next { right: 14px; }
+    .bichao-nav-btn:active {
+      transform: scale(0.95);
+    }
 
-    .gal-thumbs-col {
+    /* CTA Instagram */
+    .bichao-carousel-cta {
+      margin-top: 26px;
+      text-align: center;
+    }
+    .btn-instagram-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 24px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1.5px solid rgba(255, 255, 255, 0.35);
+      color: var(--white);
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 180ms ease;
+    }
+    .btn-instagram-pill:hover {
+      background: var(--bichao-yellow);
+      border-color: var(--bichao-yellow);
+      color: var(--bichao-blue-deep);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Lightbox Modal Limpa para Tela Cheia */
+    .bichao-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
       display: flex;
-      flex-direction: column;
-      gap: 16px;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 250ms ease;
     }
-
-    .gal-thumbs-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
-    }
-    @media (min-width: 860px) {
-      .gal-thumbs-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    .gal-thumb-item {
-      aspect-ratio: 4 / 3;
-      border-radius: 14px;
-      overflow: hidden;
-      border: 3px solid transparent;
-      opacity: 0.6;
-      padding: 0;
-      background: var(--bichao-blue);
-      transition: opacity 180ms ease, border-color 180ms ease, transform 180ms ease;
-    }
-    .gal-thumb-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .gal-thumb-item.is-active {
+    .bichao-lightbox.is-open {
       opacity: 1;
-      border-color: var(--bichao-orange);
-      transform: scale(1.03);
+      pointer-events: auto;
+    }
+    .bichao-lightbox-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 16, 48, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .bichao-lightbox-body {
+      position: relative;
+      z-index: 2;
+      max-width: 1100px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .bichao-lightbox-figure {
+      background: transparent;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+      max-width: 100%;
+    }
+    .bichao-lightbox-figure img {
+      max-width: 100%;
+      max-height: 82vh;
+      display: block;
+      margin: 0 auto;
+      object-fit: contain;
+      border-radius: 18px;
+    }
+    .bichao-lightbox-close {
+      position: absolute;
+      top: -46px;
+      right: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      color: #fff;
+      font-size: 1.8rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 180ms ease;
+    }
+    .bichao-lightbox-close:hover {
+      background: var(--bichao-yellow);
+      color: var(--bichao-blue-deep);
+      transform: scale(1.1);
+    }
+    .bichao-lightbox-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 180ms ease;
+    }
+    .bichao-lightbox-arrow:hover {
+      background: var(--bichao-yellow);
+      color: var(--bichao-blue-deep);
+      transform: translateY(-50%) scale(1.1);
+    }
+    .bichao-lb-prev { left: -60px; }
+    .bichao-lb-next { right: -60px; }
+    @media (max-width: 900px) {
+      .bichao-lightbox { padding: 10px; }
+      .bichao-lb-prev { left: 8px; width: 42px; height: 42px; }
+      .bichao-lb-next { right: 8px; width: 42px; height: 42px; }
+      .bichao-lightbox-close { top: 8px; right: 8px; }
+      .bichao-lightbox-figure img { max-height: 70vh; }
     }
 
-    /* ── 07. ENCONTRE O POSTO BICHÃO (ESTILO MAPA ANIMADO DO PORTAL IPIRANGA) ── */
     .find-station-section {
       padding: 76px 0;
       background: var(--white);
@@ -1777,36 +1949,6 @@
 }
 
 @media (max-width: 600px) {
-  /* Header Mobile Compacto & Sem Quebra */
-  .header-inner {
-    height: 64px;
-    gap: 8px;
-  }
-  .brand-logo img {
-    height: 38px;
-    width: auto;
-  }
-  .header-cta-group {
-    gap: 8px;
-    flex-shrink: 0;
-  }
-  .header-find-btn {
-    padding: 8px 13px;
-    font-size: 0.80rem;
-    gap: 6px;
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-  .header-find-btn svg {
-    width: 15px;
-    height: 15px;
-  }
-  .menu-toggle-btn {
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-  }
-
   .hero-banner {
     min-height: 100svh;
     align-items: center;
@@ -1840,89 +1982,9 @@
     font-size: 0.85rem;
     padding: 12px 16px;
   }
-
-  /* Estrutura & Serviços Mobile - Botoes acima do Card */
-  .ipiranga-showcase-section {
-    padding: 56px 0;
-  }
-  .showcase-grid {
-    gap: 22px;
-  }
-  .showcase-h2 {
-    font-size: 1.85rem;
-    line-height: 1.1;
-  }
-  .showcase-lead {
-    font-size: 0.92rem;
-    line-height: 1.5;
-    margin-bottom: 4px;
-  }
-  .showcase-badges-row {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
-    width: 100%;
-    margin-bottom: 6px;
-  }
-  .service-pill-btn {
-    width: 100%;
-    padding: 7px 10px 7px 7px;
-    gap: 8px;
-    justify-content: flex-start;
-  }
-  .service-pill-circle {
-    width: 36px;
-    height: 36px;
-  }
-  .service-pill-circle svg {
-    width: 18px;
-    height: 18px;
-  }
-  .service-pill-label {
-    font-size: 0.82rem;
-    white-space: nowrap;
-  }
-  .showcase-nav-arrows {
-    display: none;
-  }
-  .showcase-card-content {
-    padding: 20px 20px 24px;
-  }
-  .showcase-card-title {
-    font-size: 1.35rem;
-  }
-  .showcase-card-desc {
-    font-size: 0.90rem;
-    line-height: 1.52;
-    margin-bottom: 16px;
-  }
 }
 
 @media (max-width: 380px) {
-  .header-find-btn {
-    padding: 7px 10px;
-    font-size: 0.76rem;
-    gap: 4px;
-  }
-  .brand-logo img {
-    height: 34px;
-  }
-  .service-pill-btn {
-    padding: 6px 8px 6px 6px;
-    gap: 6px;
-  }
-  .service-pill-circle {
-    width: 32px;
-    height: 32px;
-  }
-  .service-pill-circle svg {
-    width: 16px;
-    height: 16px;
-  }
-  .service-pill-label {
-    font-size: 0.78rem;
-  }
-
   .hero-banner > .container {
     padding: 68px 14px 38px;
   }

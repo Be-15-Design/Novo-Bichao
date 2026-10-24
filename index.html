@@ -95,7 +95,7 @@
       <a href="https://api.whatsapp.com/send/?phone=5543988288537&text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Posto%20Bich%C3%A3o." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="width:100%;">
         Chamar no WhatsApp
       </a>
-      <a href="https://www.google.com/maps/place/Posto+Bich%C3%A3o/@-23.2928454,-51.2342248,1740m/data=!3m2!1e3!4b1!4m6!3m5!1s0x94eb5b3b4026b96d:0x61bd697de8055618!8m2!3d-23.2928454!4d-51.2342248!16s%2Fg%2F11lzx9vst7?entry=ttu&amp;g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="btn btn-yellow" style="width:100%;">
+      <a href="https://www.google.com/maps/dir/?api=1&destination=Posto+Bich%C3%A3o,+Camb%C3%A9+-+PR" target="_blank" rel="noopener noreferrer" class="btn btn-yellow" style="width:100%;">
         Traçar Rota no Maps
       </a>
       <a href="https://waze.com/ul?q=Posto+Bichao+Cambe" target="_blank" rel="noopener noreferrer" class="btn btn-blue" style="width:100%;">
@@ -134,7 +134,7 @@
                 <span>Chamar no WhatsApp</span>
               </a>
 
-              <a href="https://www.google.com/maps/place/Posto+Bich%C3%A3o/@-23.2928454,-51.2342248,1740m/data=!3m2!1e3!4b1!4m6!3m5!1s0x94eb5b3b4026b96d:0x61bd697de8055618!8m2!3d-23.2928454!4d-51.2342248!16s%2Fg%2F11lzx9vst7?entry=ttu&amp;g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D"
+              <a href="https://www.google.com/maps/dir/?api=1&destination=Posto+Bich%C3%A3o,+Camb%C3%A9+-+PR"
                  target="_blank" rel="noopener noreferrer"
                  class="btn btn-yellow">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
@@ -151,7 +151,29 @@
       <div class="container">
         <div class="showcase-grid">
           
-          <!-- Lado Editorial: Título, Descrição e Badges de Seleção de Serviço -->
+          <!-- Lado Esquerdo: Card Featured com testeira Ipiranga Amarela/Laranja -->
+          <div class="showcase-card-wrapper reveal">
+            <article class="showcase-feature-card" id="showcaseActiveCard">
+              <div class="showcase-card-canopy">
+                <span class="canopy-pill-tag" id="showcaseTag">Ipimax • Alta Performance</span>
+              </div>
+              <div class="showcase-card-img-box">
+                <img id="showcaseImg" src="public/images/abastecimento.webp" alt="Combustível Ipimax no Posto Bichão" loading="lazy" />
+              </div>
+              <div class="showcase-card-content">
+                <h3 class="showcase-card-title" id="showcaseTitle">Combustível Ipimax</h3>
+                <p class="showcase-card-desc" id="showcaseDesc">
+                  Gasolina, Diesel S10 e Etanol aditivados com tecnologia de ponta. Limpa bicos, reduz emissões e rende mais quilômetros por litro.
+                </p>
+                <a href="https://api.whatsapp.com/send/?phone=5543988288537&text=Ol%C3%A1%21%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20o%20abastecimento%20no%20Posto%20Bich%C3%A3o." target="_blank" rel="noopener noreferrer" class="showcase-link" id="showcaseLink">
+                  <span>Consultar no WhatsApp</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Lado Direito: Tipografia Editorial Limpa + Badges Circulares (Idêntico ao print 5 da Ipiranga) -->
           <div class="showcase-info-col reveal">
             <span class="eyebrow-minimal">Estrutura &amp; Serviços</span>
             <h2 id="showcase-heading" class="showcase-h2">
@@ -161,7 +183,7 @@
               A Ipiranga evoluiu para completar muito mais que seu tanque. No Posto Bichão, reunimos combustíveis aditivados, conveniência 24h, café fresquinho e a melhor parada de Cambé.
             </p>
 
-            <!-- Badges Circulares de Seleção -->
+            <!-- Badges Circulares inspiradas em ampm / Jet Oil / KMV -->
             <div class="showcase-badges-row" role="tablist" aria-label="Selecione um serviço">
               <button type="button" class="service-pill-btn is-active" role="tab" aria-selected="true" data-service="ipimax" aria-label="Combustível Ipimax">
                 <span class="service-pill-circle">
@@ -200,28 +222,6 @@
             </div>
           </div>
 
-          <!-- Lado do Card Featured com testeira Ipiranga Amarela/Laranja -->
-          <div class="showcase-card-wrapper reveal">
-            <article class="showcase-feature-card" id="showcaseActiveCard">
-              <div class="showcase-card-canopy">
-                <span class="canopy-pill-tag" id="showcaseTag">Ipimax • Alta Performance</span>
-              </div>
-              <div class="showcase-card-img-box">
-                <img id="showcaseImg" src="public/images/posto-pista-caminhao.jpg" alt="Combustível Ipimax no Posto Bichão" loading="lazy" />
-              </div>
-              <div class="showcase-card-content">
-                <h3 class="showcase-card-title" id="showcaseTitle">Combustível Ipimax</h3>
-                <p class="showcase-card-desc" id="showcaseDesc">
-                  Gasolina, Diesel S10 e Etanol aditivados com tecnologia de ponta Ipiranga. Limpa bicos, reduz atritos internos e rende mais quilômetros por litro.
-                </p>
-                <a href="https://api.whatsapp.com/send/?phone=5543988288537&text=Ol%C3%A1%21%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20o%20abastecimento%20Ipimax." target="_blank" rel="noopener noreferrer" class="showcase-link" id="showcaseLink">
-                  <span>Consultar no WhatsApp</span>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                </a>
-              </div>
-            </article>
-          </div>
-
         </div>
       </div>
     </section>
@@ -258,7 +258,7 @@
               </div>
             </div>
 
-            <a href="https://www.google.com/maps/place/Posto+Bich%C3%A3o/@-23.2928454,-51.2342248,1740m/data=!3m2!1e3!4b1!4m6!3m5!1s0x94eb5b3b4026b96d:0x61bd697de8055618!8m2!3d-23.2928454!4d-51.2342248!16s%2Fg%2F11lzx9vst7?entry=ttu&amp;g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="yellow-band-link">
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Posto+Bich%C3%A3o,+Camb%C3%A9+-+PR" target="_blank" rel="noopener noreferrer" class="yellow-band-link">
               <span>Como chegar ao posto</span>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </a>
@@ -316,7 +316,7 @@
 
           <!-- Ações de Navegação e Contato -->
           <div class="blue-card-actions">
-            <a href="https://www.google.com/maps/place/Posto+Bich%C3%A3o/@-23.2928454,-51.2342248,1740m/data=!3m2!1e3!4b1!4m6!3m5!1s0x94eb5b3b4026b96d:0x61bd697de8055618!8m2!3d-23.2928454!4d-51.2342248!16s%2Fg%2F11lzx9vst7?entry=ttu&amp;g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="btn btn-yellow">
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Posto+Bich%C3%A3o,+Camb%C3%A9+-+PR" target="_blank" rel="noopener noreferrer" class="btn btn-yellow">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
               <span>Abrir no Google Maps</span>
             </a>
@@ -331,78 +331,133 @@
       </div>
     </section>
 
-    <!-- ====== 06. ENCONTROS NO BICHÃO (GALERIA LIMPA) ====== -->
-    <section id="encontros" class="gallery-clean-section" aria-labelledby="encontros-heading">
+                <!-- ====== 06. ENCONTROS NO BICHÃO (CARROSSEL CINEMATOGRÁFICO 20 FOTOS) ====== -->
+    <section id="encontros" class="bichao-carousel-section" aria-labelledby="encontros-heading">
       <div class="container">
-        <div class="clean-section-head reveal">
-          <div>
-            <span class="eyebrow-yellow">Galeria de Fotos</span>
-            <h2 id="encontros-heading" class="clean-h2">
-              Encontros <span>no Bichão.</span>
-            </h2>
-          </div>
-          <p style="color:var(--text-muted);max-width:380px;font-size:0.96rem;">
-            Registros reais de quem passa por aqui e faz do nosso pátio o ponto de encontro preferido.
+        <div class="bichao-carousel-header reveal">
+          <span class="eyebrow-yellow">Galeria de Fotos</span>
+          <h2 id="encontros-heading" class="bichao-carousel-title">
+            Encontros <span>no Bichão.</span>
+          </h2>
+          <p class="bichao-carousel-subtitle">
+            Registros reais de quem passa por aqui e faz do nosso pátio o ponto de encontro preferido em Cambé – PR.
           </p>
         </div>
 
-        <div class="gallery-showcase-box reveal">
-          <div class="gal-main-stage" id="galleryStage">
-            <img id="galleryMainImg" src="public/images/posto-pista-caminhao.jpg" alt="Pista Ipiranga do Posto Bichão" loading="lazy" />
-            <button type="button" class="gal-arrow-btn gal-arrow-prev" id="galleryPrevBtn" aria-label="Foto anterior">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        <div class="bichao-carousel-container reveal">
+          <!-- Imagem Principal em Destaque (Sem frases/legendas sobre a imagem) -->
+          <div class="bichao-carousel-stage" id="carouselStage" role="region" aria-label="Foto em destaque" tabindex="0">
+            <img id="carouselMainImg" src="public/images/gallery/foto-01.webp" alt="Foto da galeria Posto Bichão" />
+          </div>
+
+          <!-- Trilho de Miniaturas (5 Visíveis no Desktop com Scroll Suave) -->
+          <div class="bichao-carousel-thumbs-wrapper" id="carouselThumbsWrapper">
+            <div class="bichao-carousel-thumbs-track" id="carouselThumbsTrack" role="tablist" aria-label="Miniaturas do carrossel">
+            <button type="button" class="bichao-carousel-thumb is-active" data-idx="0" data-src="public/images/gallery/foto-01.webp" aria-label="Foto 1">
+              <img src="public/images/gallery/foto-01.webp" alt="Foto 1 da galeria Posto Bichão" loading="lazy" />
             </button>
-            <button type="button" class="gal-arrow-btn gal-arrow-next" id="galleryNextBtn" aria-label="Próxima foto">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            <button type="button" class="bichao-carousel-thumb" data-idx="1" data-src="public/images/gallery/foto-02.webp" aria-label="Foto 2">
+              <img src="public/images/gallery/foto-02.webp" alt="Foto 2 da galeria Posto Bichão" loading="lazy" />
             </button>
-            <div class="gal-stage-caption">
-              <div>
-                <div id="galleryCaptionTitle" style="font-family:var(--font-display);font-weight:800;font-size:1.1rem;">Pista Ipiranga 24 Horas</div>
-                <div id="galleryCaptionSub" style="font-size:0.84rem;opacity:0.86;">Abastecimento ágil e atendimento parceiro em Cambé</div>
-              </div>
+            <button type="button" class="bichao-carousel-thumb" data-idx="2" data-src="public/images/gallery/foto-03.webp" aria-label="Foto 3">
+              <img src="public/images/gallery/foto-03.webp" alt="Foto 3 da galeria Posto Bichão" loading="lazy" />
+            </button>
+            <button type="button" class="bichao-carousel-thumb" data-idx="3" data-src="public/images/gallery/foto-04.webp" aria-label="Foto 4">
+              <img src="public/images/gallery/foto-04.webp" alt="Foto 4 da galeria Posto Bichão" loading="lazy" />
+            </button>
+            <button type="button" class="bichao-carousel-thumb" data-idx="4" data-src="public/images/gallery/foto-05.webp" aria-label="Foto 5">
+              <img src="public/images/gallery/foto-05.webp" alt="Foto 5 da galeria Posto Bichão" loading="lazy" />
+            </button>
+            <button type="button" class="bichao-carousel-thumb" data-idx="5" data-src="public/images/gallery/foto-06.webp" aria-label="Foto 6">
+              <img src="public/images/gallery/foto-06.webp" alt="Foto 6 da galeria Posto Bichão" loading="lazy" />
+            </button>
+            <button type="button" class="bichao-carousel-thumb" data-idx="6" data-src="public/images/gallery/foto-07.webp" aria-label="Foto 7">
+              <img src="public/images/gallery/foto-07.webp" alt="Foto 7 da galeria Posto Bichão" loading="lazy" />
+            </button>
+            <button type="button" class="bichao-carousel-thumb" data-idx="7" data-src="public/images/gallery/foto-08.webp" aria-label="Foto 8">
+              <img src="public/images/gallery/foto-08.webp" alt="Foto 8 da galeria Posto Bichão" loading="lazy" />
+            </button>
+            <button type="button" class="bichao-carousel-thumb" data-idx="8" data-src="public/images/gallery/foto-09.webp" aria-label="Foto 9">
+              <img src="public/images/gallery/foto-09.webp" alt="Foto 9 da galeria Posto Bichão" loading="lazy" />
+            </button>
+            <button type="button" class="bichao-carousel-thumb" data-idx="9" data-src="public/images/gallery/foto-10.webp" aria-label="Foto 10">
+              <img src="public/images/gallery/foto-10.webp" alt="Foto 10 da galeria Posto Bichão" loading="lazy" />
+            </button>
+            <button type="button" class="bichao-carousel-thumb" data-idx="10" data-src="public/images/gallery/foto-11.webp" aria-label="Foto 11">
+              <img src="public/images/gallery/foto-11.webp" alt="Foto 11 da galeria Posto Bichão" loading="lazy" />
+            </button>
+            <button type="button" class="bichao-carousel-thumb" data-idx="11" data-src="public/images/gallery/foto-12.webp" aria-label="Foto 12">
+              <img src="public/images/gallery/foto-12.webp" alt="Foto 12 da galeria Posto Bichão" loading="lazy" />
+            </button>
+            <button type="button" class="bichao-carousel-thumb" data-idx="12" data-src="public/images/gallery/foto-13.webp" aria-label="Foto 13">
+              <img src="public/images/gallery/foto-13.webp" alt="Foto 13 da galeria Posto Bichão" loading="lazy" />
+            </button>
+            <button type="button" class="bichao-carousel-thumb" data-idx="13" data-src="public/images/gallery/foto-14.webp" aria-label="Foto 14">
+              <img src="public/images/gallery/foto-14.webp" alt="Foto 14 da galeria Posto Bichão" loading="lazy" />
+            </button>
+            <button type="button" class="bichao-carousel-thumb" data-idx="14" data-src="public/images/gallery/foto-15.webp" aria-label="Foto 15">
+              <img src="public/images/gallery/foto-15.webp" alt="Foto 15 da galeria Posto Bichão" loading="lazy" />
+            </button>
+            <button type="button" class="bichao-carousel-thumb" data-idx="15" data-src="public/images/gallery/foto-16.webp" aria-label="Foto 16">
+              <img src="public/images/gallery/foto-16.webp" alt="Foto 16 da galeria Posto Bichão" loading="lazy" />
+            </button>
+            <button type="button" class="bichao-carousel-thumb" data-idx="16" data-src="public/images/gallery/foto-17.webp" aria-label="Foto 17">
+              <img src="public/images/gallery/foto-17.webp" alt="Foto 17 da galeria Posto Bichão" loading="lazy" />
+            </button>
+            <button type="button" class="bichao-carousel-thumb" data-idx="17" data-src="public/images/gallery/foto-18.webp" aria-label="Foto 18">
+              <img src="public/images/gallery/foto-18.webp" alt="Foto 18 da galeria Posto Bichão" loading="lazy" />
+            </button>
+            <button type="button" class="bichao-carousel-thumb" data-idx="18" data-src="public/images/gallery/foto-19.webp" aria-label="Foto 19">
+              <img src="public/images/gallery/foto-19.webp" alt="Foto 19 da galeria Posto Bichão" loading="lazy" />
+            </button>
+            <button type="button" class="bichao-carousel-thumb" data-idx="19" data-src="public/images/gallery/foto-20.webp" aria-label="Foto 20">
+              <img src="public/images/gallery/foto-20.webp" alt="Foto 20 da galeria Posto Bichão" loading="lazy" />
+            </button>
             </div>
           </div>
 
-          <div class="gal-thumbs-col">
-            <div class="gal-thumbs-grid" role="tablist" aria-label="Escolher foto da galeria">
-              <button type="button" class="gal-thumb-item is-active" role="tab" aria-selected="true"
-                      data-idx="0"
-                      data-src="public/images/posto-pista-caminhao.jpg"
-                      data-title="Pista Ipiranga 24 Horas"
-                      data-sub="Abastecimento ágil e atendimento parceiro em Cambé"
-                      aria-label="Foto 1">
-                <img src="public/images/posto-pista-caminhao.jpg" alt="Miniatura 1 - Pista" loading="lazy" />
-              </button>
-              <button type="button" class="gal-thumb-item" role="tab" aria-selected="false"
-                      data-idx="1"
-                      data-src="public/images/posto-conveniencia-entrada.jpg"
-                      data-title="Conveniência Posto Bichão"
-                      data-sub="Café fresquinho, lanches e parada clássica de quem viaja"
-                      aria-label="Foto 2">
-                <img src="public/images/posto-conveniencia-entrada.jpg" alt="Miniatura 2 - Conveniência" loading="lazy" />
-              </button>
-              <button type="button" class="gal-thumb-item" role="tab" aria-selected="false"
-                      data-idx="2"
-                      data-src="public/images/posto-jet-oil.jpg"
-                      data-title="Box Jet Oil Ipiranga"
-                      data-sub="Troca de óleo especializada e segurança Texaco"
-                      aria-label="Foto 3">
-                <img src="public/images/posto-jet-oil.jpg" alt="Miniatura 3 - Jet Oil" loading="lazy" />
-              </button>
-              <button type="button" class="gal-thumb-item" role="tab" aria-selected="false"
-                      data-idx="3"
-                      data-src="public/images/gallery-01.webp"
-                      data-title="Encontros no Bichão"
-                      data-sub="O ponto de encontro preferido na rodovia e na cidade"
-                      aria-label="Foto 4">
-                <img src="public/images/gallery-01.webp" alt="Miniatura 4 - Encontros" loading="lazy" />
-              </button>
-            </div>
+          <!-- Controles de Navegação Centrados (< e >) -->
+          <div class="bichao-carousel-nav">
+            <button type="button" class="bichao-nav-btn bichao-nav-prev" id="carouselPrevBtn" aria-label="Foto anterior">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"/>
+              </svg>
+            </button>
+            <button type="button" class="bichao-nav-btn bichao-nav-next" id="carouselNextBtn" aria-label="Próxima foto">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </button>
+          </div>
 
-            <a href="https://instagram.com/postobichao" target="_blank" rel="noopener noreferrer" class="btn btn-blue" style="width:100%;">
-              <span>Ver mais no @postobichao</span>
+          <!-- Link Instagram Opcional Integrado -->
+          <div class="bichao-carousel-cta">
+            <a href="https://instagram.com/postobichao" target="_blank" rel="noopener noreferrer" class="btn-instagram-pill">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              </svg>
+              <span>Ver mais fotos no @postobichao</span>
             </a>
           </div>
+        </div>
+      </div>
+
+      <!-- Lightbox Modal Limpo (Sem frases, foco total na foto) -->
+      <div class="bichao-lightbox" id="carouselLightbox" role="dialog" aria-modal="true" aria-label="Foto ampliada" hidden>
+        <div class="bichao-lightbox-backdrop" id="carouselLightboxBackdrop"></div>
+        <div class="bichao-lightbox-body">
+          <button type="button" class="bichao-lightbox-close" id="carouselLightboxClose" aria-label="Fechar">&times;</button>
+          <button type="button" class="bichao-lightbox-arrow bichao-lb-prev" id="carouselLightboxPrev" aria-label="Anterior">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <div class="bichao-lightbox-figure">
+            <img id="carouselLightboxImg" src="public/images/gallery/foto-01.webp" alt="Foto ampliada" />
+          </div>
+          <button type="button" class="bichao-lightbox-arrow bichao-lb-next" id="carouselLightboxNext" aria-label="Próxima">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
         </div>
       </div>
     </section>
@@ -467,7 +522,7 @@
             </div>
 
             <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;">
-              <a href="https://www.google.com/maps/place/Posto+Bich%C3%A3o/@-23.2928454,-51.2342248,1740m/data=!3m2!1e3!4b1!4m6!3m5!1s0x94eb5b3b4026b96d:0x61bd697de8055618!8m2!3d-23.2928454!4d-51.2342248!16s%2Fg%2F11lzx9vst7?entry=ttu&amp;g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D"
+              <a href="https://www.google.com/maps/dir/?api=1&destination=Posto+Bich%C3%A3o,+Camb%C3%A9+-+PR"
                  target="_blank" rel="noopener noreferrer"
                  class="btn btn-yellow" style="flex:1;min-width:140px;">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
@@ -533,7 +588,7 @@
               Sua avaliação 5 estrelas fortalece nossa equipe que está pronta para te atender dia e noite em Cambé – PR.
             </p>
 
-            <a href="https://www.google.com/maps/place/Posto+Bich%C3%A3o/@-23.2928454,-51.2342248,1740m/data=!3m2!1e3!4b1!4m6!3m5!1s0x94eb5b3b4026b96d:0x61bd697de8055618!8m2!3d-23.2928454!4d-51.2342248!16s%2Fg%2F11lzx9vst7?entry=ttu&amp;g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D"
+            <a href="https://www.google.com/maps/search/?api=1&query=Posto+Bich%C3%A3o+Camb%C3%A9+-+PR"
                target="_blank" rel="noopener noreferrer"
                class="btn btn-blue">
               <span>Deixar Avaliação no Google</span>
@@ -616,7 +671,7 @@
           <a class="footer-icon-row" href="#localizacao"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20 10c0 6-8 11-8 11S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span>R. Roberto Romanelli, 843<br />Cambé — PR, 86187-015</span></a>
           <p class="footer-icon-row footer-hours"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Seg a Sáb: 24 Horas<br />Domingo: 07:00 às 20:00</span></p>
           <div style="display:flex;gap:8px;margin-top:10px;">
-            <a class="footer-route" href="https://www.google.com/maps/place/Posto+Bich%C3%A3o/@-23.2928454,-51.2342248,1740m/data=!3m2!1e3!4b1!4m6!3m5!1s0x94eb5b3b4026b96d:0x61bd697de8055618!8m2!3d-23.2928454!4d-51.2342248!16s%2Fg%2F11lzx9vst7?entry=ttu&amp;g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">Maps</a>
+            <a class="footer-route" href="https://www.google.com/maps/dir/?api=1&amp;destination=Posto+Bich%C3%A3o,+Camb%C3%A9+-+PR" target="_blank" rel="noopener noreferrer">Maps</a>
             <a class="footer-route" href="https://waze.com/ul?q=Posto+Bichao+Cambe" target="_blank" rel="noopener noreferrer">Waze</a>
           </div>
         </div>
